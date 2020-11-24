@@ -745,19 +745,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elena\\.nuget\\packages\\": {}
+    "C:\\Users\\Я\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\data\\5 term\\командный проект\\TeamProject\\TeamProject\\TeamProject.csproj",
+      "projectUniqueName": "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
       "projectName": "TeamProject",
-      "projectPath": "D:\\data\\5 term\\командный проект\\TeamProject\\TeamProject\\TeamProject.csproj",
-      "packagesPath": "C:\\Users\\Elena\\.nuget\\packages\\",
-      "outputPath": "D:\\data\\5 term\\командный проект\\TeamProject\\TeamProject\\obj\\",
+      "projectPath": "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
+      "packagesPath": "C:\\Users\\Я\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Elena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Я\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -808,7 +812,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   },
