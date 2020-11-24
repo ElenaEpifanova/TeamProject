@@ -1,0 +1,10 @@
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\appsettings.json
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.exe
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csprojAssemblyReference.cache
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\staticwebassets\TeamProject.StaticWebAssets.Manifest.cache
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\staticwebassets\TeamProject.StaticWebAssets.xml
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.AssemblyInfoInputs.cache
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.AssemblyInfo.cs
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorTargetAssemblyInfo.cache
