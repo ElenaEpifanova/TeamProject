@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TeamProject",
+    "\\TeamProject\\Data",
+    "\\TeamProject\\Data\\interfaces",
+    "\\TeamProject\\Data\\mocks",
+    "\\TeamProject\\Data\\Models",
+    "\\TeamProject\\Data\\Repository"
+  ],
+  "SelectedNode": "\\TeamProject\\Data\\Repository\\TypeTechnicRepository.cs",
+  "PreviewInSolutionExplorer": false
+}
