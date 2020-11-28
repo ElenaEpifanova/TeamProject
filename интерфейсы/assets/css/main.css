@@ -1848,7 +1848,7 @@ input, select, textarea {
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
-	input[type="datetime-local"],
+	input[type="date"],
 	input[type="time"],
 	input[type="file"],
 	button,
@@ -1883,7 +1883,7 @@ input, select, textarea {
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
-		input[type="datetime-local"]: hover,
+		input[type="date"]: hover,
 		input[type="time"],
 		input[type="file"]: hover,
 		button:hover,
@@ -1895,7 +1895,7 @@ input, select, textarea {
 			input[type="submit"]:hover:active,
 			input[type="reset"]:hover:active,
 			input[type="button"]:hover:active,
-			input[type="datetime-local"]:hover:active,
+			input[type="date"]:hover:active,
 			input[type="time"]:hover:active;
 			input[type="file"]:hover:active;
 			button:hover:active,
@@ -1906,12 +1906,12 @@ input, select, textarea {
 		input[type="submit"]:before, input[type="submit"]:after,
 		input[type="reset"]:before,
 		input[type="reset"]:after,
-		input[type="datetime-local"]:after,
+		input[type="date"]:after,
 		input[type="time"]:after;
 		input[type="time"]:before;
 		input[type="file"]:after;
 		input[type="file"]:before;
-		input[type="datetime-local"]:before,
+		input[type="date"]:before,
 		input[type="button"]:before,
 		input[type="button"]:after,
 		button:before,
@@ -1937,7 +1937,7 @@ input, select, textarea {
 		input[type="submit"]:after,
 		input[type="reset"]:after,
 		input[type="button"]:after,
-		input[type="datetime-local"]:after,
+		input[type="date"]:after,
 		input[type="file"]:after,
 		input[type="time"]:after;
 		button:after,
@@ -1949,7 +1949,7 @@ input, select, textarea {
 		input[type="submit"].fit,
 		input[type="reset"].fit,
 		input[type="button"].fit,
-		input[type="datetime-local"].fit,
+		input[type="date"].fit,
 		input[type="time"].fit,
 		input[type="file"].fit,
 		button.fit,
@@ -1960,7 +1960,7 @@ input, select, textarea {
 		input[type="submit"].large,
 		input[type="reset"].large,
 		input[type="button"].large,
-		input[type="datetime-local"].large,
+		input[type="date"].large,
 		input[type="time"].large;
 		input[type="file"].large;
 		button.large,
@@ -1972,7 +1972,7 @@ input, select, textarea {
 		input[type="submit"].small,
 		input[type="reset"].small,
 		input[type="button"].small,
-		input[type="datetime-local"].small,
+		input[type="date"].small,
 		input[type="time"].small,
 		input[type="file"].small,
 		button.small,
@@ -2531,7 +2531,7 @@ input, select, textarea {
 					ul.actions:not(.fixed) li input[type="submit"],
 					ul.actions:not(.fixed) li input[type="reset"],
 					ul.actions:not(.fixed) li input[type="button"],
-					ul.actions:not(.fixed) li input[type="datetime-local"],
+					ul.actions:not(.fixed) li input[type="date"],
 					ul.actions:not(.fixed) li input[type="time"],
 					ul.actions:not(.fixed) li input[type="file"],
 					ul.actions:not(.fixed) li button,
@@ -2542,7 +2542,7 @@ input, select, textarea {
 						ul.actions:not(.fixed) li input[type="submit"].icon:before,
 						ul.actions:not(.fixed) li input[type="reset"].icon:before,
 						ul.actions:not(.fixed) li input[type="button"].icon:before,
-						ul.actions:not(.fixed) li input[type="datetime-local"].icon:before,
+						ul.actions:not(.fixed) li input[type="date"].icon:before,
 						ul.actions:not(.fixed) li input[type="time"].icon:before,
 						ul.actions:not(.fixed) li input[type="file"].icon:before,
 						ul.actions:not(.fixed) li button.icon:before,
