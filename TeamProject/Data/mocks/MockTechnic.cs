@@ -10,7 +10,7 @@ namespace TeamProject.Data.mocks
     public class MockTechnic : ITechnic
     {
         private readonly ITypeTechnic _typeTechnic = new MockTypeTechnic();
-        public IEnumerable<Technic> Technics { get
+        public IEnumerable<Technic> AllTechnics { get
             {
                 return new List<Technic>
                 { 

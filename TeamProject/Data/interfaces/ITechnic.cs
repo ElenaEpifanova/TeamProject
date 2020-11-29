@@ -8,7 +8,7 @@ namespace TeamProject.Data.interfaces
 {
     public interface ITechnic
     {
-        IEnumerable<Technic> Technics { get; }
+        IEnumerable<Technic> AllTechnics { get; }
         Technic getObjectTechnic(int technicId);
     }
 }

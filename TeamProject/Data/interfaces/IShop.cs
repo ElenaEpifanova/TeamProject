@@ -8,6 +8,6 @@ namespace TeamProject.Data.interfaces
 {
     public interface IShop
     {
-        IEnumerable<Shop> Shops { get; }
+        IEnumerable<Shop> AllShops { get; }
     }
 }

@@ -1,0 +1,8 @@
+﻿@using TeamProject.ViewModels
+@model ViewRequestsViewModel
+
+@{
+    Layout = "_Index";
+}
+
+  <tr><td>1</td><td>16.10.2020</td><td>@Model.AllUsers.First().name</td><td>@Model.AllShops.First().name</td><td>@Model.AllRequests.First().description (<a href="view.html">Подробнее...</a>) </td></tr>

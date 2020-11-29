@@ -9,7 +9,7 @@ namespace TeamProject.Data.mocks
 {
     public class MockShop : IShop
     {
-        public IEnumerable<Shop> Shops
+        public IEnumerable<Shop> AllShops
         {
             get
             {

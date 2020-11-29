@@ -8,7 +8,7 @@ namespace TeamProject.Data.interfaces
 {
     public interface IRequest
     {
-        IEnumerable<Request> Requests { get; }
+        IEnumerable<Request> AllRequests { get; }
         Request getObjectRequest(int requestId);
     }
 }

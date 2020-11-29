@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TeamProject.Data.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TeamProject.Data.interfaces;
+using TeamProject.ViewModels;
 
 namespace TeamProject.Controllers
 {
@@ -20,11 +21,14 @@ namespace TeamProject.Controllers
             _allUsers = iAllUsers;
         }
 
-        public ViewResult Index()
+        public ViewResult List()
         {
-            var Requests = _allRequests.Requests;
+            ViewRequestsViewModel obj = new ViewRequestsViewModel();
+            obj.AllRequests = _allRequests.AllRequests;
+            obj.AllShops = _allShops.AllShops;
+            obj.AllUsers = _allUsers.AllUsers;
 
-            return View(Requests);
+            return View(obj);
         }
 
 
