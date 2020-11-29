@@ -8,3 +8,41 @@ D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.AssemblyInfoInputs.cache
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.AssemblyInfo.cs
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorTargetAssemblyInfo.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.exe
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.deps.json
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.runtimeconfig.json
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.runtimeconfig.dev.json
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.pdb
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csprojAssemblyReference.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.AssemblyInfoInputs.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.AssemblyInfo.cs
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csproj.CoreCompileInputs.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\staticwebassets\TeamProject.StaticWebAssets.Manifest.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\staticwebassets\TeamProject.StaticWebAssets.xml
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\scopedcss\bundle\TeamProject.styles.css
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorTargetAssemblyInfo.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csproj.CopyComplete
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.pdb
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.genruntimeconfig.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.Views.dll
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\TeamProject.Views.pdb
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorAssemblyInfo.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorAssemblyInfo.cs
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.TagHelpers.input.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.TagHelpers.output.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorCoreGenerate.cache
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorTargetAssemblyInfo.cs
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.Views.pdb
+C:\Users\Я\Documents\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\Index.cshtml.g.cs

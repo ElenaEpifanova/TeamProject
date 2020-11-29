@@ -6,7 +6,7 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.interfaces
 {
-    interface IUser
+    public interface IUser
     {
         IEnumerable<User> AllUsers { get; }
         User getObjectUser(int userId);

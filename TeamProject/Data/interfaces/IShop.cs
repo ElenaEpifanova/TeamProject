@@ -6,7 +6,7 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.interfaces
 {
-    interface IShop
+    public interface IShop
     {
         IEnumerable<Shop> Shops { get; }
     }

@@ -6,7 +6,7 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.interfaces
 {
-    interface IResponsible
+    public interface IResponsible
     {
         IEnumerable<Responsible> AllResponsibles { get; }
     }

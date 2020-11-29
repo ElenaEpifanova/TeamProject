@@ -20,11 +20,5 @@ namespace TeamProject.Data.mocks
                 };
             }
         }
-
-
-        public Shop getObjectTechnic(int shopId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

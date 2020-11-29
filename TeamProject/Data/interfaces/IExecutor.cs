@@ -6,7 +6,7 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.interfaces
 {
-    interface IExecutor
+    public interface IExecutor
     {
         IEnumerable<Executor> AllExecutors { get; }
     }

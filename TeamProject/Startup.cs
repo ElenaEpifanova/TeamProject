@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TeamProject.Data.interfaces;
+using TeamProject.Data.mocks;
 
 namespace TeamProject
 {
@@ -16,7 +18,14 @@ namespace TeamProject
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddTransient<IExecutor, MockExecutor>();
+            services.AddTransient<IRequest, MockRequest>();
+            services.AddTransient<IResponsible, MockResponsible>();
+            services.AddTransient<IShop, MockShop>();
+            services.AddTransient<ITechnic, MockTechnic>();
+            services.AddTransient<ITypeTechnic, MockTypeTechnic>();
+            services.AddTransient<IUser, MockUser>();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,7 +34,16 @@ namespace TeamProject
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+
+            app.UseRouting();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+               // endpoints.MapControllers();
+                endpoints.MapRazorPages();
+            });
+
         }
     }
 }

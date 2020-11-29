@@ -6,7 +6,7 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.interfaces
 {
-    interface IRequest
+    public interface IRequest
     {
         IEnumerable<Request> Requests { get; }
         Request getObjectRequest(int requestId);

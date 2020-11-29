@@ -6,7 +6,7 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.interfaces
 {
-    interface ITechnic
+    public interface ITechnic
     {
         IEnumerable<Technic> Technics { get; }
         Technic getObjectTechnic(int technicId);
