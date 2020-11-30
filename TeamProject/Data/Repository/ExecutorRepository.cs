@@ -6,18 +6,20 @@ using TeamProject.Data.interfaces;
 using TeamProject.Data.Models;
 
 namespace TeamProject.Data.Repository
-{
-
-    public class TypeTechnicRepository : ITypeTechnic 
+{ 
+    public class ExecutorRepository: IExecutor
     {
         private readonly AppDBContent appDBContent;
 
-        public TypeTechnicRepository(AppDBContent appDBContent)
+        public ExecutorRepository(AppDBContent appDBContent)
         {
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<TypeTechnic> AllType => appDBContent.TypeTechnic;
-   //to do
+        public IEnumerable<Executor> AllExecutors => appDBContent.Executor;
     }
+
+
+
+
 }

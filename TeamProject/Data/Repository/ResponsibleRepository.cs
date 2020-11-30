@@ -7,17 +7,14 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.Repository
 {
-
-    public class TypeTechnicRepository : ITypeTechnic 
+    public class ResponsibleRepository : IResponsible
     {
         private readonly AppDBContent appDBContent;
-
-        public TypeTechnicRepository(AppDBContent appDBContent)
+        public ResponsibleRepository(AppDBContent appDBContent)
         {
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<TypeTechnic> AllType => appDBContent.TypeTechnic;
-   //to do
+        public IEnumerable<Responsible> AllResponsibles => appDBContent.Responsible;
     }
 }

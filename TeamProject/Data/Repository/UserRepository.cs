@@ -7,17 +7,15 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.Repository
 {
-
-    public class TypeTechnicRepository : ITypeTechnic 
+    public class UserRepository : IUser
     {
         private readonly AppDBContent appDBContent;
-
-        public TypeTechnicRepository(AppDBContent appDBContent)
+        public UserRepository(AppDBContent appDBContent)
         {
             this.appDBContent = appDBContent;
         }
+        public IEnumerable<User> AllUsers => appDBContent.User;
 
-        public IEnumerable<TypeTechnic> AllType => appDBContent.TypeTechnic;
-   //to do
+        public User getObjectUser(int userId) => appDBContent.User.FirstOrDefault(p => p.id == userId);
     }
 }

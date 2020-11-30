@@ -9,6 +9,6 @@ namespace TeamProject.Data.Models
     {
         public int id_User { get; set; }
         public virtual User user { get; set; }
-        public List<Request> executorOf { get; set; }
+        public List<Technic> executorOf { get; set; }
     }
 }
