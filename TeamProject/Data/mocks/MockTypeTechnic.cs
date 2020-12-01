@@ -13,8 +13,8 @@ namespace TeamProject.Data.mocks
         { get
             {
                 return new List<TypeTechnic>
-                { new TypeTechnic{ id=1, name="Установка кислотной обработки", quantity=2 },
-                  new TypeTechnic{id=2, name="АРС Урал (Агрегат ремонто-сварочный)", quantity=2 }
+                { new TypeTechnic{  name="Установка кислотной обработки", quantity=2 },
+                  new TypeTechnic{ name="АРС Урал (Агрегат ремонто-сварочный)", quantity=2 }
                 };
             }
 

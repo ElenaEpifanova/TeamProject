@@ -16,8 +16,8 @@ namespace TeamProject.Data.mocks
             {
                 return new List<Responsible>
                 {
-                    new Responsible { id_User = 2, user = _user.AllUsers.First()},
-                    new Responsible { id_User = 3, user = _user.AllUsers.Last()}
+                    new Responsible { UserId = 2, User = _user.AllUsers.First()},
+                    new Responsible { UserId = 3, User = _user.AllUsers.Last()}
                 };
             }
         }

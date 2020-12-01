@@ -27,6 +27,10 @@ namespace TeamProject.Data
         {
             modelBuilder.Entity<Shop>().Ignore(b => b.requests);
             modelBuilder.Entity<TypeTechnic>().Ignore(b => b.technics);
+            modelBuilder.Entity<Responsible>().Ignore(b => b.requests);
+            modelBuilder.Entity<Executor>().Ignore(b => b.technics);
+            modelBuilder.Entity<Request>().Ignore(b => b.technic);
+
         }
     }
 }

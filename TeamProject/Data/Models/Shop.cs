@@ -7,7 +7,7 @@ namespace TeamProject.Data.Models
 {
 	public class Shop
 	{
-		public int id { set; get; }
+		public int Id { set; get; }
 		public string name { set; get; }
 		public List<Request> requests { set; get; }
 	}

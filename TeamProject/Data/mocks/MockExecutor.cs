@@ -16,8 +16,8 @@ namespace TeamProject.Data.mocks
             {
                 return new List<Executor>
                 {
-                    new Executor { id_User = 1, user = _user.AllUsers.First()},
-                    new Executor { id_User = 2, user = _user.AllUsers.Last()}
+                    new Executor { UserId = 1, User = _user.AllUsers.First()},
+                    new Executor { UserId = 2, User = _user.AllUsers.Last()}
                 };
 
             }

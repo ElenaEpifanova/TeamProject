@@ -16,6 +16,6 @@ namespace TeamProject.Data.Repository
         }
         public IEnumerable<User> AllUsers => appDBContent.User;
 
-        public User getObjectUser(int userId) => appDBContent.User.FirstOrDefault(p => p.id == userId);
+        public User getObjectUser(int userId) => appDBContent.User.FirstOrDefault(p => p.Id == userId);
     }
 }

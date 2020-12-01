@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using TeamProject.Data.interfaces;
@@ -14,8 +15,8 @@ namespace TeamProject.Data.Repository
         {
             this.appDBContent = appDBContent;
         }
-        public IEnumerable<Request> AllRequests => appDBContent.Request;
+        public IEnumerable<Request> AllRequests => appDBContent.Request.Include(r => r.Shop).Include(r => r.Responsible);
 
-        public Request getObjectRequest(int requestId) => appDBContent.Request.FirstOrDefault(p => p.id == requestId);
+        public Request getObjectRequest(int requestId) => appDBContent.Request.FirstOrDefault(p => p.Id == requestId);
     }
 }

@@ -18,9 +18,9 @@ namespace TeamProject.Data.Repository
         }
 
 
-        public IEnumerable<Technic> AllTechnics => appDBContent.Technic.Include(t => t.type);
+        public IEnumerable<Technic> AllTechnics => appDBContent.Technic.Include(t => t.TypeTechnic).Include(t => t.Executor).Include(t => t.Request);
 
-        public Technic getObjectTechnic(int technicId) => appDBContent.Technic.FirstOrDefault(t => t.id == technicId);
+        public Technic getObjectTechnic(int technicId) => appDBContent.Technic.FirstOrDefault(t => t.Id == technicId);
 
     }
 }

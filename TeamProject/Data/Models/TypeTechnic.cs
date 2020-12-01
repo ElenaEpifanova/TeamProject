@@ -7,7 +7,7 @@ namespace TeamProject.Data.Models
 {
     public class TypeTechnic
     {
-        public int id { set; get; }
+        public int Id { set; get; }
         public string name { set; get; }
         public int quantity { set; get; }
         public List<Technic> technics { set; get; }

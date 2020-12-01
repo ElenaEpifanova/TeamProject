@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using TeamProject.Data.interfaces;
@@ -16,7 +17,7 @@ namespace TeamProject.Data.Repository
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<Executor> AllExecutors => appDBContent.Executor;
+        public IEnumerable<Executor> AllExecutors => appDBContent.Executor.Include(e => e.User);
     }
 
 

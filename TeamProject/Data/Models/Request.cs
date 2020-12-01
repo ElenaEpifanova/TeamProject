@@ -10,14 +10,14 @@ namespace TeamProject.Data.Models
 	{
 		
 
-		public int id { set; get; }
+		public int Id { set; get; }
 
-		public int id_shop { set; get; }
-		public virtual Shop shop { set; get; }
+		public int ShopId { set; get; }
+		public virtual Shop Shop { set; get; }
 
 		
-		public int id_responsible{ set; get; }
-		public virtual Responsible responsible { set; get; }
+		public int ResponsibleId{ set; get; }
+		public virtual Responsible Responsible { set; get; }
 
 
 		public DateTime begin { set; get; }

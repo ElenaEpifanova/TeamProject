@@ -16,8 +16,8 @@ namespace TeamProject.Data.mocks
             {
                 return new List<Request>
                 {
-                    new Request{id_Shop=1, id_Responsible=1, date_begin=0, date_end=1, description="Расчистка", comment="", technic = new List<Technic> {_technic.AllTechnics.First()} },
-                    new Request{id_Shop=2, id_Responsible=1, date_begin=0, date_end=1, description="Здравствуйте", comment="", technic = new List<Technic> {_technic.AllTechnics.First(), _technic.AllTechnics.Last(), } }
+                    new Request{ShopId=1, ResponsibleId=1, begin=new DateTime(2015, 7, 20), end=new DateTime(2015, 7, 21), description="Расчистка", comment="", technic = new List<Technic> {_technic.AllTechnics.First()} },
+                    new Request{ShopId=2, ResponsibleId=1, begin=new DateTime(2015, 7, 20), end=new DateTime(2015, 7, 22), description="Здравствуйте", comment="", technic = new List<Technic> {_technic.AllTechnics.First(), _technic.AllTechnics.Last(), } }
                 };
             }
         }
