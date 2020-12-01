@@ -7,15 +7,15 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.Data.Repository
 {
-    public class RequestRepository : IRequest
+    public class PlaceRepository : IPlace
     {
         private readonly AppDBContent appDBContent;
-        public RequestRepository(AppDBContent appDBContent)
+
+        public PlaceRepository(AppDBContent appDBContent)
         {
             this.appDBContent = appDBContent;
         }
-        public IEnumerable<Request> AllRequests => appDBContent.Request;
+        public IEnumerable<Place> AllPlaces => appDBContent.Place;
 
-        public Request getObjectRequest(int requestId) => appDBContent.Request.FirstOrDefault(p => p.id == requestId);
     }
 }

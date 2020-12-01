@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ainur\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj": {}
+    "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ainur\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj": {
+    "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ainur\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
+        "projectUniqueName": "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
         "projectName": "TeamProject",
-        "projectPath": "C:\\Users\\ainur\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
-        "packagesPath": "C:\\Users\\ainur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ainur\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\obj\\",
+        "projectPath": "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
+        "packagesPath": "C:\\Users\\Я\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Я\\Documents\\GitHub\\TeamProject\\TeamProject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ainur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Я\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,14 +50,6 @@
             "JSON": {
               "target": "Package",
               "version": "[1.0.1, )"
-            },
-            "Microsoft.AspNet.Mvc": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
-            "Microsoft.AspNetCore.StaticFiles": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

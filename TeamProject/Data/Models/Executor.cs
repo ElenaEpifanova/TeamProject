@@ -7,8 +7,8 @@ namespace TeamProject.Data.Models
 {
     public class Executor
     {
-        public int id_User { get; set; }
+        public int id_user { get; set; }
         public virtual User user { get; set; }
-        public List<Technic> executorOf { get; set; }
+        public List<Technic> technics { get; set; }
     }
 }

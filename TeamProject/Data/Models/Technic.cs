@@ -8,11 +8,11 @@ namespace TeamProject.Data.Models
     public class Technic
     {
         public int id {set; get;}
-        public int id_Type { set; get; }
+        public int id_type { set; get; }
         public virtual TypeTechnic type { set; get; }
       
-        public int delay { set; get; }  //type time
-        public int duration { set; get; } //type time
+        public DateTime delay { set; get; }  //type time
+        public DateTime duration { set; get; } //type time
         public string path { set; get; }
 
         public virtual Executor executor { set; get; }

@@ -5,36 +5,37 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using TeamProject.Data;
 using TeamProject.Data.interfaces;
-using TeamProject.Data.mocks;
-using Microsoft.EntityFrameworkCore;
+using TeamProject.Data.Repository;
 
 namespace TeamProject
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-
         private IConfigurationRoot _confString;
-        public Startup(Microsoft.AspNetCore.Hosting.IHostingEnvironment hostEnv)
+        public Startup(IWebHostEnvironment hostEnv)
         {
             _confString = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
         }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IExecutor, MockExecutor>();
-            services.AddTransient<IRequest, MockRequest>();
-            services.AddTransient<IResponsible, MockResponsible>();
-            services.AddTransient<IShop, MockShop>();
-            services.AddTransient<ITechnic, MockTechnic>();
-            services.AddTransient<ITypeTechnic, MockTypeTechnic>();
-            services.AddTransient<IUser, MockUser>();
+            services.AddTransient<IExecutor, ExecutorRepository>();
+            services.AddTransient<IPlace, PlaceRepository>();
+            services.AddTransient<IRequest, RequestRepository>();
+            services.AddTransient<IResponsible, ResponsibleRepository>();
+            services.AddTransient<IShop, ShopRepository>();
+            services.AddTransient<ITechnic, TechnicRepository>();
+            services.AddTransient<ITypeTechnic, TypeTechnicRepository>();
+            services.AddTransient<IUser, UserRepository>();
+
+            IServiceCollection serviceCollections = services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 

@@ -21,6 +21,7 @@ namespace TeamProject.Data
         public DbSet<Technic> Technic { get; }
         public DbSet<TypeTechnic> TypeTechnic { get; }
         public DbSet<Shop> Shop { get; }
+        public DbSet<Place> Place { get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
