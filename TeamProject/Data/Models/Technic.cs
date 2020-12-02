@@ -22,7 +22,7 @@ namespace TeamProject.Data.Models
 
         public int quantity { set; get; }
 
-        public int RequestId { set; get; }
+        public int ?RequestId { set; get; }
 
         public virtual Request Request { set; get; }
 

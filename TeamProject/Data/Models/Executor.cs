@@ -10,6 +10,6 @@ namespace TeamProject.Data.Models
         public int Id { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
-        public List<Technic> technics { get; set; }
+        public virtual List<Technic> technics { get; set; }
     }
 }

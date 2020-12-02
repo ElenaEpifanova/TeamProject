@@ -26,7 +26,10 @@ namespace TeamProject.Data.Models
 		public string description { set; get; }
 		public string comment { set; get; }
 
-		public List<Technic> technic { set; get; }
+		public int PlaceId { set; get; }
+		public virtual Place Place { set; get; }
+
+		public virtual List<Technic> technic { set; get; }
 
 	}
 

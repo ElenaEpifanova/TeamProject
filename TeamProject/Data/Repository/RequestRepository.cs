@@ -15,7 +15,7 @@ namespace TeamProject.Data.Repository
         {
             this.appDBContent = appDBContent;
         }
-        public IEnumerable<Request> AllRequests => appDBContent.Request.Include(r => r.Shop).Include(r => r.Responsible);
+        public IEnumerable<Request> AllRequests => appDBContent.Request;
 
         public Request getObjectRequest(int requestId) => appDBContent.Request.FirstOrDefault(p => p.Id == requestId);
     }

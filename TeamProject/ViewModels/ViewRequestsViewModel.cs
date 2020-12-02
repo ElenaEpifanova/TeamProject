@@ -10,7 +10,7 @@ namespace TeamProject.ViewModels
     {
         public IEnumerable <Request> AllRequests { get; set; }
         public IEnumerable<Shop> AllShops { get; set; }
-        public IEnumerable<User> AllUsers { get; set; }
+        public IEnumerable<Responsible> AllResponsibles { get; set; }
 
     }
 }

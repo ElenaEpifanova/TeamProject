@@ -9,6 +9,6 @@ namespace TeamProject.Data.Models
 	{
 		public int Id { set; get; }
 		public string name { set; get; }
-		public List<Request> requests { set; get; }
+		public virtual List<Request> requests { set; get; }
 	}
 }

@@ -10,7 +10,7 @@ using TeamProject.Data;
 namespace TeamProject.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20201201191234_Initial")]
+    [Migration("20201202145826_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,7 +60,7 @@ namespace TeamProject.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("PlaceId")
+                    b.Property<int>("PlaceId")
                         .HasColumnType("int");
 
                     b.Property<int>("ResponsibleId")
@@ -134,7 +134,7 @@ namespace TeamProject.Migrations
                     b.Property<int>("ExecutorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RequestId")
+                    b.Property<int?>("RequestId")
                         .HasColumnType("int");
 
                     b.Property<int>("TypeTechnicId")
@@ -199,7 +199,7 @@ namespace TeamProject.Migrations
             modelBuilder.Entity("TeamProject.Data.Models.Executor", b =>
                 {
                     b.HasOne("TeamProject.Data.Models.User", "User")
-                        .WithMany()
+                        .WithMany("executors")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -209,21 +209,25 @@ namespace TeamProject.Migrations
 
             modelBuilder.Entity("TeamProject.Data.Models.Request", b =>
                 {
-                    b.HasOne("TeamProject.Data.Models.Place", null)
+                    b.HasOne("TeamProject.Data.Models.Place", "Place")
                         .WithMany("requests")
-                        .HasForeignKey("PlaceId");
+                        .HasForeignKey("PlaceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TeamProject.Data.Models.Responsible", "Responsible")
-                        .WithMany()
+                        .WithMany("requests")
                         .HasForeignKey("ResponsibleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TeamProject.Data.Models.Shop", "Shop")
-                        .WithMany()
+                        .WithMany("requests")
                         .HasForeignKey("ShopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Place");
 
                     b.Navigation("Responsible");
 
@@ -233,7 +237,7 @@ namespace TeamProject.Migrations
             modelBuilder.Entity("TeamProject.Data.Models.Responsible", b =>
                 {
                     b.HasOne("TeamProject.Data.Models.User", "User")
-                        .WithMany()
+                        .WithMany("responsibles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -244,19 +248,18 @@ namespace TeamProject.Migrations
             modelBuilder.Entity("TeamProject.Data.Models.Technic", b =>
                 {
                     b.HasOne("TeamProject.Data.Models.Executor", "Executor")
-                        .WithMany()
+                        .WithMany("technics")
                         .HasForeignKey("ExecutorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TeamProject.Data.Models.Request", "Request")
-                        .WithMany()
+                        .WithMany("technic")
                         .HasForeignKey("RequestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("TeamProject.Data.Models.TypeTechnic", "TypeTechnic")
-                        .WithMany()
+                        .WithMany("technics")
                         .HasForeignKey("TypeTechnicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -268,9 +271,41 @@ namespace TeamProject.Migrations
                     b.Navigation("TypeTechnic");
                 });
 
+            modelBuilder.Entity("TeamProject.Data.Models.Executor", b =>
+                {
+                    b.Navigation("technics");
+                });
+
             modelBuilder.Entity("TeamProject.Data.Models.Place", b =>
                 {
                     b.Navigation("requests");
+                });
+
+            modelBuilder.Entity("TeamProject.Data.Models.Request", b =>
+                {
+                    b.Navigation("technic");
+                });
+
+            modelBuilder.Entity("TeamProject.Data.Models.Responsible", b =>
+                {
+                    b.Navigation("requests");
+                });
+
+            modelBuilder.Entity("TeamProject.Data.Models.Shop", b =>
+                {
+                    b.Navigation("requests");
+                });
+
+            modelBuilder.Entity("TeamProject.Data.Models.TypeTechnic", b =>
+                {
+                    b.Navigation("technics");
+                });
+
+            modelBuilder.Entity("TeamProject.Data.Models.User", b =>
+                {
+                    b.Navigation("executors");
+
+                    b.Navigation("responsibles");
                 });
 #pragma warning restore 612, 618
         }

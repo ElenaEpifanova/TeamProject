@@ -12,13 +12,13 @@ namespace TeamProject.Controllers
     {
         private readonly IRequest _allRequests;
         private readonly IShop _allShops;
-        private readonly IUser _allUsers;
+        private readonly IResponsible _allResponsibles;
 
-        public ViewRequestsController(IRequest iAllRequests, IShop iAllShops, IUser iAllUsers)
+        public ViewRequestsController(IRequest iAllRequests, IShop iAllShops, IResponsible iAllResponsibles)
         {
             _allRequests = iAllRequests;
             _allShops = iAllShops;
-            _allUsers = iAllUsers;
+            _allResponsibles = iAllResponsibles;
         }
 
         public ViewResult List()
@@ -26,7 +26,7 @@ namespace TeamProject.Controllers
             ViewRequestsViewModel obj = new ViewRequestsViewModel();
             obj.AllRequests = _allRequests.AllRequests;
             obj.AllShops = _allShops.AllShops;
-            obj.AllUsers = _allUsers.AllUsers;
+            obj.AllResponsibles = _allResponsibles.AllResponsibles;
 
             return View(obj);
         }

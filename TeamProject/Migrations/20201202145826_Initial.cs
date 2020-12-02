@@ -110,7 +110,7 @@ namespace TeamProject.Migrations
                     end = table.Column<DateTime>(type: "datetime2", nullable: false),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PlaceId = table.Column<int>(type: "int", nullable: true)
+                    PlaceId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -120,7 +120,7 @@ namespace TeamProject.Migrations
                         column: x => x.PlaceId,
                         principalTable: "Place",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Request_Responsible_ResponsibleId",
                         column: x => x.ResponsibleId,
@@ -147,7 +147,7 @@ namespace TeamProject.Migrations
                     path = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExecutorId = table.Column<int>(type: "int", nullable: false),
                     quantity = table.Column<int>(type: "int", nullable: false),
-                    RequestId = table.Column<int>(type: "int", nullable: false)
+                    RequestId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -163,7 +163,7 @@ namespace TeamProject.Migrations
                         column: x => x.RequestId,
                         principalTable: "Request",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Technic_TypeTechnic_TypeTechnicId",
                         column: x => x.TypeTechnicId,

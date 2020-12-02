@@ -17,7 +17,7 @@ namespace TeamProject.Data.Repository
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<Executor> AllExecutors => appDBContent.Executor.Include(e => e.User);
+        public IEnumerable<Executor> AllExecutors => appDBContent.Executor;
     }
 
 

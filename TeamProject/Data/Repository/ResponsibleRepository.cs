@@ -16,6 +16,6 @@ namespace TeamProject.Data.Repository
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<Responsible> AllResponsibles => appDBContent.Responsible.Include(r => r.User);
+        public IEnumerable<Responsible> AllResponsibles => appDBContent.Responsible;
     }
 }

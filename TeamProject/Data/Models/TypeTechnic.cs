@@ -10,7 +10,7 @@ namespace TeamProject.Data.Models
         public int Id { set; get; }
         public string name { set; get; }
         public int quantity { set; get; }
-        public List<Technic> technics { set; get; }
+        public virtual List<Technic> technics { set; get; }
 
     }
 }
