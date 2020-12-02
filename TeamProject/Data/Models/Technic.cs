@@ -11,8 +11,8 @@ namespace TeamProject.Data.Models
         public int TypeTechnicId { set; get; }
         public virtual TypeTechnic TypeTechnic { set; get; }
       
-        public DateTime delay { set; get; }  //type time
-        public DateTime duration { set; get; } //type time
+        public int delay { set; get; }  //type time
+        public int duration { set; get; } //type time
         public string path { set; get; }
 
         public int ExecutorId { set; get; }
@@ -22,7 +22,7 @@ namespace TeamProject.Data.Models
 
         public int quantity { set; get; }
 
-        public int ?RequestId { set; get; }
+        public int RequestId { set; get; }
 
         public virtual Request Request { set; get; }
 

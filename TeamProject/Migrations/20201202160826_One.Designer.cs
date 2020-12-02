@@ -10,8 +10,8 @@ using TeamProject.Data;
 namespace TeamProject.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20201202145826_Initial")]
-    partial class Initial
+    [Migration("20201202160826_One")]
+    partial class One
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -134,17 +134,17 @@ namespace TeamProject.Migrations
                     b.Property<int>("ExecutorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("RequestId")
+                    b.Property<int>("RequestId")
                         .HasColumnType("int");
 
                     b.Property<int>("TypeTechnicId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("delay")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("delay")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("duration")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("duration")
+                        .HasColumnType("int");
 
                     b.Property<string>("path")
                         .HasColumnType("nvarchar(max)");
@@ -256,7 +256,8 @@ namespace TeamProject.Migrations
                     b.HasOne("TeamProject.Data.Models.Request", "Request")
                         .WithMany("technic")
                         .HasForeignKey("RequestId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("TeamProject.Data.Models.TypeTechnic", "TypeTechnic")
                         .WithMany("technics")

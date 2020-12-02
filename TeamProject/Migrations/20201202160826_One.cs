@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TeamProject.Migrations
 {
-    public partial class Initial : Migration
+    public partial class One : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -142,12 +142,12 @@ namespace TeamProject.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TypeTechnicId = table.Column<int>(type: "int", nullable: false),
-                    delay = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    duration = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    delay = table.Column<int>(type: "int", nullable: false),
+                    duration = table.Column<int>(type: "int", nullable: false),
                     path = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExecutorId = table.Column<int>(type: "int", nullable: false),
                     quantity = table.Column<int>(type: "int", nullable: false),
-                    RequestId = table.Column<int>(type: "int", nullable: true)
+                    RequestId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

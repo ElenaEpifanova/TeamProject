@@ -6,4 +6,4 @@
 }
 
 
-  <tr><td>1</td><td>16.10.2020</td><td>@Model.AllResponsibles.ElementAt(5).User?.name</td><td>@Model.AllShops.First().name</td></tr>
+  <tr><td>1</td><td>@Model.AllRequests.First().begin</td><td>@Model.AllRequests.First().Responsible.User.name</td><td>@Model.AllShops.First().name</td></tr>

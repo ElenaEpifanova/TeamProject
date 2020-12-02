@@ -14,8 +14,8 @@ namespace TeamProject.Data.mocks
             {
                 return new List<Technic>
                 { 
-                    new Technic{quantity=1, path="", delay=new DateTime(2015, 7, 20, 18, 30, 25), duration=new DateTime(2015, 7, 20, 18, 30, 25), RequestId=1, ExecutorId=1, TypeTechnicId=1, TypeTechnic=_typeTechnic.AllType.First()},
-                    new Technic{quantity=1, path="", delay=new DateTime(2015, 7, 20, 18, 30, 25), duration=new DateTime(2015, 7, 20, 18, 30, 25), RequestId=1, ExecutorId=1, TypeTechnicId=2, TypeTechnic=_typeTechnic.AllType.Last() }
+                    new Technic{quantity=1, path="", delay=50, duration=120, RequestId=1, ExecutorId=1, TypeTechnicId=1, TypeTechnic=_typeTechnic.AllType.First()},
+                    new Technic{quantity=1, path="", delay=50, duration=180, RequestId=1, ExecutorId=1, TypeTechnicId=2, TypeTechnic=_typeTechnic.AllType.Last() }
                 };
             }
          }
