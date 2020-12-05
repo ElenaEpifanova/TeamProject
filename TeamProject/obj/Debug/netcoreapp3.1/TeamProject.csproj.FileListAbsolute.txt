@@ -274,7 +274,6 @@ D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.TagHelp
 D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.TagHelpers.output.cache
 D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorCoreGenerate.cache
 D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Index.cshtml.g.cs
-D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\List.cshtml.g.cs
 D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorTargetAssemblyInfo.cache
 D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorTargetAssemblyInfo.cs
 D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.Views.pdb
@@ -377,3 +376,10 @@ C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\De
 C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Section2.cshtml.g.cs
 C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\Index.cshtml.g.cs
 C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\ViewRequest.cshtml.g.cs
+D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Section1\Index.cshtml.g.cs
+D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Section2\Index.cshtml.g.cs
+D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Section1.cshtml.g.cs
+D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Section2.cshtml.g.cs
+D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_View.cshtml.g.cs
+D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\Index.cshtml.g.cs
+D:\Documents\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\ViewRequest.cshtml.g.cs

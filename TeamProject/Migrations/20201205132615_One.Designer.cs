@@ -10,7 +10,7 @@ using TeamProject.Data;
 namespace TeamProject.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20201202160826_One")]
+    [Migration("20201205132615_One")]
     partial class One
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

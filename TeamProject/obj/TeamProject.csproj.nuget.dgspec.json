@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj": {}
+    "D:\\Documents\\TeamProject\\TeamProject\\TeamProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj": {
+    "D:\\Documents\\TeamProject\\TeamProject\\TeamProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
+        "projectUniqueName": "D:\\Documents\\TeamProject\\TeamProject\\TeamProject.csproj",
         "projectName": "TeamProject",
-        "projectPath": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
-        "packagesPath": "C:\\Users\\mlaym\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\obj\\",
+        "projectPath": "D:\\Documents\\TeamProject\\TeamProject\\TeamProject.csproj",
+        "packagesPath": "C:\\Users\\ainur\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\TeamProject\\TeamProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mlaym\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ainur\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

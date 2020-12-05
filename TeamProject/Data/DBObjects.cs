@@ -51,15 +51,30 @@ namespace TeamProject.Data
                     (
                         new Technic
                         {
+                            TypeTechnic = TypesTechnic["Самосвал Камаз"],
+                            quantity = 5,
+                            delay = 36,
+                            duration = 12,
+                            path = "Скв316_от_02_10.pdf",
+                            ExecutorId = 6,
+                            RequestId = 1
+                        }
+                     );
+
+            content.Technic.Add
+                    (
+                        new Technic
+                        {
                             TypeTechnic = TypesTechnic["Автокран"],
                             quantity = 2,
                             delay = 0,
-                            duration = 0,
+                            duration = 36,
                             path = "Скв316_от_02_10.pdf",
                             ExecutorId = 1,
                             RequestId = 1
                         }
                      );
+
 
             content.SaveChanges();
         }
@@ -202,16 +217,16 @@ namespace TeamProject.Data
                 {
                     var list = new TypeTechnic[]
                     {
-                        new TypeTechnic{name="ПАРМ Камаз", quantity=3},
-                        new TypeTechnic{name="АРС Урал", quantity=4},
-                        new TypeTechnic{name="АПРС Камаз", quantity=2},
-                        new TypeTechnic{name="АДПМ на базе Камаз", quantity=2},
-                        new TypeTechnic{name="Камаз бортовой с КМУ", quantity=4},
-                        new TypeTechnic{name="Тягач Урал с КМУ", quantity=2},
-                        new TypeTechnic{name="Самосвал Камаз", quantity=3},
-                        new TypeTechnic{name="АИС Урал", quantity=2},
-                        new TypeTechnic{name="Автогрейдер", quantity=2},
-                        new TypeTechnic{name="Автокран", quantity=1}
+                        new TypeTechnic{name="ПАРМ Камаз", quantity=10},
+                        new TypeTechnic{name="АРС Урал", quantity=10},
+                        new TypeTechnic{name="АПРС Камаз", quantity=10},
+                        new TypeTechnic{name="АДПМ на базе Камаз", quantity=10},
+                        new TypeTechnic{name="Камаз бортовой с КМУ", quantity=10},
+                        new TypeTechnic{name="Тягач Урал с КМУ", quantity=10},
+                        new TypeTechnic{name="Самосвал Камаз", quantity=10},
+                        new TypeTechnic{name="АИС Урал", quantity=10},
+                        new TypeTechnic{name="Автогрейдер", quantity=10},
+                        new TypeTechnic{name="Автокран", quantity=10}
                     };
                     typeTechnic = new Dictionary<string, TypeTechnic>();
                     foreach (TypeTechnic el in list)
