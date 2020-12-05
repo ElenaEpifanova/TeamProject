@@ -47,33 +47,37 @@ namespace TeamProject.Data
             content.SaveChanges();
 
             if (!content.Technic.Any())
+            {
                 content.Technic.Add
-                    (
-                        new Technic
-                        {
-                            TypeTechnic = TypesTechnic["Самосвал Камаз"],
-                            quantity = 5,
-                            delay = 36,
-                            duration = 12,
-                            path = "Скв316_от_02_10.pdf",
-                            ExecutorId = 6,
-                            RequestId = 1
-                        }
-                     );
+                   (
+                       new Technic
+                       {
+                           TypeTechnic = TypesTechnic["Самосвал Камаз"],
+                           quantity = 5,
+                           delay = 36,
+                           duration = 12,
+                           path = "Скв316_от_02_10.pdf",
+                           ExecutorId = 6,
+                           RequestId = 1
+                       }
+                    );
 
-            content.Technic.Add
-                    (
-                        new Technic
-                        {
-                            TypeTechnic = TypesTechnic["Автокран"],
-                            quantity = 2,
-                            delay = 0,
-                            duration = 36,
-                            path = "Скв316_от_02_10.pdf",
-                            ExecutorId = 1,
-                            RequestId = 1
-                        }
-                     );
+                content.Technic.Add
+                        (
+                            new Technic
+                            {
+                                TypeTechnic = TypesTechnic["Автокран"],
+                                quantity = 2,
+                                delay = 0,
+                                duration = 36,
+                                path = "Скв316_от_02_10.pdf",
+                                ExecutorId = 1,
+                                RequestId = 1
+                            }
+                         );
+            }
+
+               
 
 
             content.SaveChanges();
