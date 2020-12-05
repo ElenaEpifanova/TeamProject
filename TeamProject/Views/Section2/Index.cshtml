@@ -1,0 +1,109 @@
+﻿@using TeamProject.ViewModels
+@model Section2ViewModel
+
+@{
+    Layout = "_Section2";
+}
+
+
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>Составление заявки</h2>
+        </div>
+        <div class="meta">
+            <h2>Раздел 2</h2>
+        </div>
+    </header>
+
+    <footer>
+        <p style="width: 300px;"><font size=5>Место работы:</font></p>
+        <ul class="select">
+            <select name="place" style="width: 595px;">
+                @{
+                    foreach (var place in Model.AllPlaces)
+                    {
+                        <option>@place.name</option>
+                    }
+                }
+            </select>
+        </ul>
+    </footer>
+</article>
+@*Пост в foreach цикле (от кол-ва техник)*@
+<article class="post">
+    <header>
+        <div class="title">
+            <h3>Техника 1</h3>
+        </div>
+    </header>
+    <footer>
+        <p style="width: 300px;"><font size=5>Тип техники:</font></p>
+        <ul class="select">
+            <select name="technic" style="width: 595px;">
+                @{
+                    foreach (var type in Model.AllTypeTechnics)
+                    {
+                        <option>@type.name</option>
+                    }
+                }
+            </select>
+        </ul>
+    </footer>
+    @*Тут в зависимости от выбранного типа*@
+    <footer>
+        <p style="width: 300px;"><font size=5>Количество:</font></p>
+        <ul class="select">
+            <select name="quantity" style="width: 595px;">
+                <option value="q1">1</option>
+                <option value="q2">2</option>
+            </select>
+        </ul>
+    </footer>
+    @*Тут в зависимости от количества техник и дат*@
+    <footer>
+        <p style="width: 300px;"><font size=5>Задержка:</font></p>
+        <ul class="select">
+            <select name="delay" style="width: 595px;">
+                <option value="q1">00:00</option>
+                <option value="q2">00:30</option>
+            </select>
+        </ul>
+    </footer>
+
+    <footer>
+        <p style="width: 300px;"><font size=5>Продолжительность:</font></p>
+        <ul class="select">
+            <select name="duration" style="width: 595px;">
+                <option value="q1">00:00</option>
+                <option value="q2">00:30</option>
+            </select>
+        </ul>
+    </footer>
+
+    <footer>
+        <p style="width: 300px;"><font size=5>Вложить файл:</font></p>
+        <ul class="file">
+            <input type="file" name="f">
+        </ul>
+    </footer>
+
+    <footer>
+        <p style="width: 300px;"><font size=5>Исполнитель:</font></p>
+        <ul class="select">
+            <select name="place" style="width: 595px;">
+                @{
+                    foreach (var executor in Model.AllExecutors)
+                    {
+                        <option>@executor.User.name</option>
+                    }
+                }
+            </select>
+        </ul>
+    </footer>
+</article>
+
+
+
+
+

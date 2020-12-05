@@ -1,0 +1,125 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Составление заявки</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
+<body class="single is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="/ViewRequests/">Журнал заявок</a></h1>
+            <h1><a href="/Section1/">Составление заявки</a></h1>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2>Составление заявки</h2>
+                    </div>
+                    <div class="meta">
+                        <h2>Раздел 1</h2>
+                    </div>
+                </header>
+
+                @RenderBody()
+
+                <footer>
+                    <p style="width: 320px;"><font size=5>Дата:</font></p>
+                    <p><font size=5>c &nbsp;</font></p>
+                    <ul class="date">
+                        <input type="date" id="localdate" name="date_start" style="width: 266px;" />
+                    </ul>
+                    <ul class="select">
+                        <select name="time_start" style="width: 265px;">
+                            @{
+                                DateTime t = new DateTime(1, 1, 1, 8, 0, 0);
+                                while (t != new DateTime(1, 1, 1, 20, 30, 0))
+                                {
+                                    if (t.Hour < 10)
+                                    {
+                                        <option>@t.ToString().Substring(10, 2):@t.ToString().Substring(13, 2)</option>
+                                    }
+                                    else
+                                    {
+                                        <option>@t.ToString().Substring(11, 2):@t.ToString().Substring(14, 2)</option>
+                                    }
+
+                                    t = t.AddMinutes(30);
+                                }
+
+                            }
+                        </select>
+                    </ul>
+                </footer>
+                <footer>
+                    <p style="width: 320px;"><font size=5> </font></p>
+                    <p><font size=5>по</font></p>
+                    <ul class="date">
+                        <input type="date" id="localdate" name="date_stop" style="width: 266px;" />
+                    </ul>
+                    <ul class="select">
+                        <select name="time_stop" style="width: 265px;">
+                            @{
+                                t = new DateTime(1, 1, 1, 8, 0, 0);
+                                while (t != new DateTime(1, 1, 1, 20, 30, 0))
+                                {
+                                    if (t.Hour < 10)
+                                    {
+                                        <option>@t.ToString().Substring(10, 2):@t.ToString().Substring(13, 2)</option>
+                                    }
+                                    else
+                                    {
+                                        <option>@t.ToString().Substring(11, 2):@t.ToString().Substring(14, 2)</option>
+                                    }
+
+                                    t = t.AddMinutes(30);
+                                }
+
+                            }
+                        </select>
+                    </ul>
+                </footer>
+
+                <footer>
+                    <p style="width: 300px;"><font size=5>Описание работ:</font></p>
+                    <ul class="text">
+                        <textarea name="description" style="width: 595px;" rows="4" placeholder="Введите описание работ.."></textarea>
+                    </ul>
+                </footer>
+
+                <footer>
+                    <p style="width: 300px;"><font size=5>Комментарий:</font></p>
+                    <ul class="textarea">
+                        <textarea name="comment" style="width: 595px;" rows="4" placeholder="Оставьте комментарий.."></textarea>
+                    </ul>
+                </footer>
+                <ul class="actions">
+                    <li><a href="/Section2/" class="button  large">К разделу 2</a></li>
+                </ul>
+            </article>
+
+        </div>
+
+        <!-- Footer -->
+        <section id="footer">
+            <p class="copyright">&copy; Епифанова Е.Л.  Морозова А.Р.  Нурушева А.Р.  (АГТУ)</p>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/js/util.js"></script>
+    <script src="~/js/main.js"></script>
+
+</body>
+</html>

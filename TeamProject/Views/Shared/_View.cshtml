@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Составление заявки</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <script src="assets/js/vis-timeline-graph2d.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="single is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="/ViewRequests/">Журнал заявок</a></h1>
+            <h1><a href="/Section1/">Составление заявки</a></h1>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2>Составление заявки</h2>
+                    </div>
+                    <div class="meta">
+                        <h2>Просмотр</h2>
+                    </div>
+                </header>
+                <p><font color="red" size=4>Перед подачей заявки проверьте введённые Вами данные и полученный график работ. Если всё верно, то ещё раз нажмите кнопку "Подать заявку", находящуюся внизу страницы.</font></p>
+                <h3>График работ</h3>
+                <div id="visualization"></div>
+                @RenderBody()
+            </article>
+
+
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h3>Раздел 1</h3>
+                    </div>
+                </header>
+                <p><b>Цех: </b> КРС (Капитальный ремонт скважин) </p>
+                <p><b>Ответственный:</b> Родзянко А.А. </p>
+                <p><b>Дата: </b> с 02.11.2020 (08:00) по 05.11.2020 (20:00) </p>
+                <p>
+                    <b>Описание работ: </b>
+                    Очистка забоя и ствола скважины от металлических предметов
+                </p>
+                <p>
+                    <b>Комментарий: </b>
+                    Более подробная информация о проводимых работах находится в прикреплённом файле
+                </p>
+            </article>
+
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h3>Раздел 2</h3>
+                    </div>
+                </header>
+                <p> <b><u> ТЕХНИКА 1</u> </b></p>
+                <p><b>Тип техники: </b> Автокран </p>
+                <p><b>Количество:</b> 2 </p>
+                <p><b>Задержка: </b> 00:00 </p>
+                <p><b>Продолжительность: </b> 36:00</p>
+                <p><b>Путь к файлу: </b> Скв316_от_02_10.pdf </p>
+                <p><b>Исполнитель: </b> Яременко О.К. </p>
+
+                <p> <b> <u>ТЕХНИКА 2</u></b></p>
+                <p><b>Тип техники: </b> Самосвал</p>
+                <p><b>Количество:</b> 5 </p>
+                <p><b>Задержка: </b> 36:00 </p>
+                <p><b>Продолжительность: </b> 12:00</p>
+                <p><b>Путь к файлу: </b> Скв316_от_02_10.pdf </p>
+                <p><b>Исполнитель: </b> Юрлов Т.С. </p>
+            </article>
+
+            <ul class="actions">
+                <li><a href="index.html" class="button">Подать заявку</a></li>
+            </ul>
+            </article>
+
+        </div>
+
+        <!-- Footer -->
+        <section id="footer">
+            <p class="copyright">&copy; Епифанова Е.Л.  Морозова А.Р.  Нурушева А.Р.  (АГТУ)</p>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

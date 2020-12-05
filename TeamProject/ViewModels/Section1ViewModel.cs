@@ -6,9 +6,9 @@ using TeamProject.Data.Models;
 
 namespace TeamProject.ViewModels
 {
-    public class ViewRequestsViewModel
+    public class Section1ViewModel
     {
-        public IEnumerable <Request> AllRequests { get; set; }
-
+        public IEnumerable<Shop> AllShops { get; set; }
+        public IEnumerable<Responsible> AllResponsibles { get; set; }
     }
 }

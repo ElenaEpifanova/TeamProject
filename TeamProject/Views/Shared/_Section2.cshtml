@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-    <title>Журнал заявок</title>
+    <title>Составление заявки</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="~/css/main.css" />
@@ -10,6 +10,7 @@
 
     <!-- Wrapper -->
     <div id="wrapper">
+
         <!-- Header -->
         <header id="header">
             <h1><a href="/ViewRequests/">Журнал заявок</a></h1>
@@ -20,21 +21,17 @@
         <div id="main">
 
             <!-- Post -->
-            <article class="post">
-                <header>
-                    <div class="title">
-                        <h2>Журнал заявок</h2>
-                    </div>
-                </header>
+           @RenderBody()
 
-                <table>
-                    <tr><th>№ заявки</th><th>Дата</th><th>ФИО ответственного</th><th>Цех</th><th>Описание работ</th></tr>
-                    @RenderBody()
-                </table>
+            <article class="post">
                 <ul class="actions">
-                    <li><a href="/Section1/" class="button">Добавить заявку</a></li>
+                    <li><a href="#" class="button">Добавить технику</a></li>
                 </ul>
             </article>
+            <ul class="actions pagination">
+                <li><a href="supply.html" class="button large">Подать заявку</a></li>
+                <li><a href="/Section1/" class="button large">К разделу 1</a></li>
+            </ul>
 
         </div>
 

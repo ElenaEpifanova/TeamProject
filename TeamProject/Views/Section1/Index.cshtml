@@ -1,0 +1,33 @@
+﻿@using TeamProject.ViewModels
+@model Section1ViewModel
+
+@{
+    Layout = "_Section1";
+}
+<footer>
+    <p style="width: 300px;"><font size=5>Цех:</font></p>
+    <ul class="select">
+        <select name="shop" style="width: 595px;">
+            @{
+                foreach (var shop in Model.AllShops)
+                {
+                    <option>@shop.name</option>
+                }
+            }
+        </select>
+    </ul>
+</footer>
+
+<footer>
+    <p style="width: 300px;"><font size=5>Ответственный:</font></p>
+    <ul class="select">
+        <select name="responsible" style="width: 595px;">
+            @{
+                foreach (var responsible in Model.AllResponsibles)
+                {
+                    <option>@responsible.User.name</option>
+                }
+            }
+        </select>
+    </ul>
+</footer>
