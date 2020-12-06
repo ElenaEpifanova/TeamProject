@@ -11,5 +11,10 @@ namespace TeamProject.ViewModels
         public IEnumerable<Place> AllPlaces { get; set; }
         public IEnumerable<TypeTechnic> AllTypeTechnics { get; set; }
         public IEnumerable<Executor> AllExecutors { get; set; }
+
+        public TypeTechnic currType { get; set; }
+        public string typeName { get; set; }
+
+        public int quantity { get; set; }
     }
 }

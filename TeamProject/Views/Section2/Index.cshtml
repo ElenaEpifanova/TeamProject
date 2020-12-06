@@ -1,5 +1,6 @@
-﻿@using TeamProject.ViewModels
+﻿
 @model Section2ViewModel
+@{ if (Model.quantity < 1) Model.quantity = 1; }
 
 @{
     Layout = "_Section2";
@@ -30,80 +31,98 @@
         </ul>
     </footer>
 </article>
-@*Пост в foreach цикле (от кол-ва техник)*@
+@{
+
+    @*Пост в foreach цикле (от кол-ва техник)*@
+    for (int i = 0; i < Model.quantity; i++)
+    {
+
+
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h3>Техника @(i + 1)</h3>
+                </div>
+            </header>
+            <footer>
+                <p style="width: 300px;"><font size=5>Тип техники:</font></p>
+                <ul class="select">
+                    <select id="technic" name="technic" style="width: 595px;">
+                        @{
+                            Model.currType = Model.AllTypeTechnics.First();
+                            foreach (var type in Model.AllTypeTechnics)
+                            {
+                                <option>@type.name</option>
+                            }
+                        }
+                    </select>
+                </ul>
+            </footer>
+            @*Тут в зависимости от выбранного типа*@
+            <footer>
+                <p style="width: 300px;"><font size=5>Количество:</font></p>
+                <ul class="select">
+                    <select id="quantity" name="quantity" style="width: 595px;">
+                        @{
+                            for (int j = 0; j < Model.currType.quantity; j++)
+                            {
+                                <option>@(j + 1)</option>
+
+                            }
+                        }
+
+                    </select>
+                </ul>
+            </footer>
+            @*Тут в зависимости от количества техник и дат*@
+            <footer>
+                <p style="width: 300px;"><font size=5>Задержка:</font></p>
+                <ul class="select">
+                    <select name="delay" style="width: 595px;">
+                        <option value="q1">00:00</option>
+                        <option value="q2">00:30</option>
+                    </select>
+                </ul>
+            </footer>
+
+            <footer>
+                <p style="width: 300px;"><font size=5>Продолжительность:</font></p>
+                <ul class="select">
+                    <select name="duration" style="width: 595px;">
+                        <option value="q1">00:00</option>
+                        <option value="q2">00:30</option>
+                    </select>
+                </ul>
+            </footer>
+
+            <footer>
+                <p style="width: 300px;"><font size=5>Вложить файл:</font></p>
+                <ul class="file">
+                    <input type="file" name="f">
+                </ul>
+            </footer>
+
+            <footer>
+                <p style="width: 300px;"><font size=5>Исполнитель:</font></p>
+                <ul class="select">
+                    <select name="place" style="width: 595px;">
+                        @{
+                            foreach (var executor in Model.AllExecutors)
+                            {
+                                <option>@executor.User.name</option>
+                            }
+                        }
+                    </select>
+                </ul>
+            </footer>
+        </article>
+    }
+}
+
+
+
 <article class="post">
-    <header>
-        <div class="title">
-            <h3>Техника 1</h3>
-        </div>
-    </header>
-    <footer>
-        <p style="width: 300px;"><font size=5>Тип техники:</font></p>
-        <ul class="select">
-            <select name="technic" style="width: 595px;">
-                @{
-                    foreach (var type in Model.AllTypeTechnics)
-                    {
-                        <option>@type.name</option>
-                    }
-                }
-            </select>
-        </ul>
-    </footer>
-    @*Тут в зависимости от выбранного типа*@
-    <footer>
-        <p style="width: 300px;"><font size=5>Количество:</font></p>
-        <ul class="select">
-            <select name="quantity" style="width: 595px;">
-                <option value="q1">1</option>
-                <option value="q2">2</option>
-            </select>
-        </ul>
-    </footer>
-    @*Тут в зависимости от количества техник и дат*@
-    <footer>
-        <p style="width: 300px;"><font size=5>Задержка:</font></p>
-        <ul class="select">
-            <select name="delay" style="width: 595px;">
-                <option value="q1">00:00</option>
-                <option value="q2">00:30</option>
-            </select>
-        </ul>
-    </footer>
-
-    <footer>
-        <p style="width: 300px;"><font size=5>Продолжительность:</font></p>
-        <ul class="select">
-            <select name="duration" style="width: 595px;">
-                <option value="q1">00:00</option>
-                <option value="q2">00:30</option>
-            </select>
-        </ul>
-    </footer>
-
-    <footer>
-        <p style="width: 300px;"><font size=5>Вложить файл:</font></p>
-        <ul class="file">
-            <input type="file" name="f">
-        </ul>
-    </footer>
-
-    <footer>
-        <p style="width: 300px;"><font size=5>Исполнитель:</font></p>
-        <ul class="select">
-            <select name="place" style="width: 595px;">
-                @{
-                    foreach (var executor in Model.AllExecutors)
-                    {
-                        <option>@executor.User.name</option>
-                    }
-                }
-            </select>
-        </ul>
-    </footer>
+    <ul class="actions">
+        <li><a class="button" asp-controller="Section2" asp-action="Index" asp-route-quantity="@Model.quantity">Добавить технику</a></li>
+    </ul>
 </article>
-
-
-
-
-

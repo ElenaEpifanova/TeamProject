@@ -21,13 +21,23 @@ namespace TeamProject.Controllers
             _allExecutors = iAllExecutors;
         }
 
-        public ViewResult Index()
+        public ViewResult Index(Section2ViewModel obj)
         {
-            Section2ViewModel obj = new Section2ViewModel();
+            if (obj.quantity < 1) obj.quantity = 1;
+            else obj.quantity++; 
+         
             obj.AllPlaces = _allPlaces.AllPlaces;
             obj.AllTypeTechnics = _allTypeTechnics.AllType;
             obj.AllExecutors = _allExecutors.AllExecutors;
             return View(obj);
         }
+
+        //public ViewResult AddTechnic(Section2ViewModel obj)
+        //{
+        //    if (obj.quantity < 1) obj.quantity = 1;
+        //    else obj.quantity++;
+        //    return View(obj);
+        //}
+
     }
 }
