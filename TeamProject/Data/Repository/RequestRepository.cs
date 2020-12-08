@@ -15,7 +15,7 @@ namespace TeamProject.Data.Repository
         {
             this.appDBContent = appDBContent;
         }
-        public IEnumerable<Request> AllRequests => appDBContent.Request;
+        public IEnumerable<Request> AllRequests => appDBContent.Request.OrderBy(r => r.begin);
 
         public Request getObjectRequest(int requestId) => appDBContent.Request.FirstOrDefault(p => p.Id == requestId);
     }

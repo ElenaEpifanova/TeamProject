@@ -9,5 +9,7 @@ namespace TeamProject.Data.interfaces
     public interface IResponsible
     {
         IEnumerable<Responsible> AllResponsibles { get; }
+
+        Responsible FindObjectResponsible(string userName);
     }
 }

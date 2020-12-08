@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TeamProject.ViewModels;
+using TeamProject.Data.Models;
+using Newtonsoft.Json;
 
 namespace TeamProject.Controllers
 {
@@ -21,7 +23,12 @@ namespace TeamProject.Controllers
         {
             ViewRequestsViewModel obj = new ViewRequestsViewModel();
             obj.AllRequests = _allRequests.AllRequests;
-
+            //--Получение объекта
+            object request;
+            TempData.TryGetValue("request", out request);
+            request = JsonConvert.DeserializeObject<Request>((string)request);
+            obj.request = request as Request;
+            //--End
             return View(obj);
         }
 

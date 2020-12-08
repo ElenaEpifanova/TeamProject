@@ -17,7 +17,13 @@ namespace TeamProject.Data.Repository
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<Executor> AllExecutors => appDBContent.Executor;
+        public IEnumerable<Executor> AllExecutors => appDBContent.Executor.OrderBy(e => e.User.name);
+
+        public Executor FindObjectExecutor(string userName)
+        {
+            int idUser = appDBContent.User.First(u => u.name == userName).Id;
+            return appDBContent.Executor.First(e => e.UserId == idUser);
+        }
     }
 
 

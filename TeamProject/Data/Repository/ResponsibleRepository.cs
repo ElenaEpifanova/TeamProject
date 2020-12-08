@@ -16,6 +16,12 @@ namespace TeamProject.Data.Repository
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<Responsible> AllResponsibles => appDBContent.Responsible;
+        public IEnumerable<Responsible> AllResponsibles => appDBContent.Responsible.OrderBy(r => r.User.name);
+
+        public Responsible FindObjectResponsible(string userName)
+        {
+            int idUser = appDBContent.User.First(u => u.name == userName).Id;
+            return appDBContent.Responsible.First(r => r.UserId == idUser);
+        }
     }
 }

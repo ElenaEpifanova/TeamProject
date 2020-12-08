@@ -10,5 +10,7 @@ namespace TeamProject.ViewModels
     {
         public IEnumerable <Request> AllRequests { get; set; }
 
+        public Request request { get; set; } = new Request();
+
     }
 }

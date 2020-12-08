@@ -16,6 +16,6 @@ namespace TeamProject.Data.Repository
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<Shop> AllShops => appDBContent.Shop;
+        public IEnumerable<Shop> AllShops => appDBContent.Shop.OrderBy(s => s.name);
     }
 }

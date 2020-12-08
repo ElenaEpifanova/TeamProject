@@ -4,10 +4,11 @@
 @{
     Layout = "_Section1";
 }
+
 <footer>
     <p style="width: 300px;"><font size=5>Цех:</font></p>
     <ul class="select">
-        <select name="shop" style="width: 595px;">
+        <select asp-for="shop" class="form-control" style="width: 595px;">
             @{
                 foreach (var shop in Model.AllShops)
                 {
@@ -21,7 +22,7 @@
 <footer>
     <p style="width: 300px;"><font size=5>Ответственный:</font></p>
     <ul class="select">
-        <select name="responsible" style="width: 595px;">
+        <select asp-for="responsible" class="form-control" style="width: 595px;">
             @{
                 foreach (var responsible in Model.AllResponsibles)
                 {
@@ -31,3 +32,105 @@
         </select>
     </ul>
 </footer>
+
+<footer>
+    <p style="width: 320px;"><font size=5>Дата:</font></p>
+    <p><font size=5>c &nbsp;</font></p>
+    <ul class="date">
+        <input type="date" id="localdate" asp-for="date_begin" class="form-control" value="" style="width: 266px;" onchange="func1('localdate');" required />
+    </ul>
+
+    <ul class="select">
+        <select id="time_b" asp-for="time_begin" class="form-control" style="width: 265px;" onchange="func2();">
+            @{
+                DateTime t = new DateTime(1, 1, 1, 8, 0, 0);
+                while (t != new DateTime(1, 1, 1, 20, 30, 0))
+                {
+                    if (t.Hour < 10)
+                    {
+                        <option>@t.ToString().Substring(10, 2):@t.ToString().Substring(13, 2)</option>
+                    }
+                    else
+                    {
+                        <option>@t.ToString().Substring(11, 2):@t.ToString().Substring(14, 2)</option>
+                    }
+
+                    t = t.AddMinutes(30);
+                }
+
+            }
+        </select>
+    </ul>
+</footer>
+<footer>
+    <p style="width: 320px;"><font size=5> </font></p>
+    <p><font size=5>по</font></p>
+    <ul class="date">
+        <input type="date" id="localdate2" asp-for="date_end" class="form-control" value="" style="width: 266px;" onchange="func2();" required />
+    </ul>
+    <ul class="select">
+        <select id="time_e" asp-for="time_end" class="form-control" style="width: 265px;">
+            @{
+                DateTime t2 = new DateTime(1, 1, 1, 8, 0, 0);
+                while (t2 != new DateTime(1, 1, 1, 20, 30, 0))
+                {
+                    if (t2.Hour < 10)
+                    {
+                        <option>@t2.ToString().Substring(10, 2):@t2.ToString().Substring(13, 2)</option>
+                    }
+                    else
+                    {
+                        <option>@t2.ToString().Substring(11, 2):@t2.ToString().Substring(14, 2)</option>
+                    }
+
+                    t2 = t2.AddMinutes(30);
+                }
+
+            }
+        </select>
+    </ul>
+</footer>
+
+<footer>
+    <p style="width: 300px;"><font size=5>Описание работ:</font></p>
+    <ul class="text">
+        <textarea asp-for="description" class="form-control" style="width: 595px;" rows="4" placeholder="Введите описание работ.." required></textarea>
+    </ul>
+</footer>
+
+<footer>
+    <p asp-for="Request.comment" style="width: 300px;"><font size=5>Комментарий:</font></p>
+    <ul class="textarea">
+        <textarea asp-for="comment" class="form-control" style="width: 595px;" rows="4" placeholder="Оставьте комментарий.."></textarea>
+    </ul>
+</footer>
+
+<script>
+    function func1(idDate) {
+        var x = document.getElementById(idDate).value;
+        var input = document.getElementById("localdate2");
+        input.setAttribute("min", x);
+        var op = document.getElementById("time_e").getElementsByTagName("option");
+    }
+
+</script>
+
+<script>
+    function func2() {
+        var d1 = document.getElementById("localdate").value;
+        var d2 = document.getElementById("localdate2").value;
+        var op = document.getElementById("time_e").getElementsByTagName("option");
+
+        for (var i = 0; i < op.length; i++)
+            op[i].disabled = false;
+
+        if (d1 == d2) {
+            var t1 = document.getElementById("time_b").value;   
+            for (var i = 0; i < op.length; i++) {
+                op[i].disabled = true;
+                if (op[i].value == t1)
+                    break;
+            }
+        }
+    }
+</script>

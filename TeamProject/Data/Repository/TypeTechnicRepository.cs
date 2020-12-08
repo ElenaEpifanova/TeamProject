@@ -17,7 +17,7 @@ namespace TeamProject.Data.Repository
             this.appDBContent = appDBContent;
         }
 
-        public IEnumerable<TypeTechnic> AllType => appDBContent.TypeTechnic;
-   //to do
+        public IEnumerable<TypeTechnic> AllType => appDBContent.TypeTechnic.OrderBy(t => t.name);
+        //to do
     }
 }

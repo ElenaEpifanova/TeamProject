@@ -9,5 +9,6 @@ namespace TeamProject.Data.interfaces
     public interface IExecutor
     {
         IEnumerable<Executor> AllExecutors { get; }
+        Executor FindObjectExecutor(string userName);
     }
 }

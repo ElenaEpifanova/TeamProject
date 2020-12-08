@@ -17,7 +17,7 @@ namespace TeamProject.Data
 
             if (!content.Responsible.Any())
                 content.Responsible.AddRange(Responsibles.Select(c => c.Value));
-
+                
             if (!content.Executor.Any())
                 content.Executor.AddRange(Executors.Select(c => c.Value));
 
@@ -76,10 +76,7 @@ namespace TeamProject.Data
                             }
                          );
             }
-
-               
-
-
+           
             content.SaveChanges();
         }
 
@@ -89,8 +86,6 @@ namespace TeamProject.Data
         private static Dictionary<string, Shop> shop;
         private static Dictionary<string, TypeTechnic> typeTechnic;
         private static Dictionary<string, Place> place;
-
-
 
         public static Dictionary<string, User> Users
         {

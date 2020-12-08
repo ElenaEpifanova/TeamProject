@@ -37,6 +37,7 @@ namespace TeamProject
 
             IServiceCollection serviceCollections = services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddControllersWithViews().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
