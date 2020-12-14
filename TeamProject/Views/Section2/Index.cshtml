@@ -1,11 +1,26 @@
 ﻿
 @model Section2ViewModel
-@{ if (Model.quantity < 1) Model.quantity = 1; }
+@{
+    if (Model.quantity < 1) Model.quantity = 1;
+
+
+}
 
 @{
     Layout = "_Section2";
 }
 
+<select id="Quntity" style="width: 595px;display:none">
+    @{
+
+        foreach (var item in Model.Quntity)
+        {
+
+            <option value="@item">@item</option>
+
+        }
+    }
+</select>
 
 <article class="post">
     <header>
@@ -20,11 +35,19 @@
     <footer>
         <p style="width: 300px;"><font size=5>Место работы:</font></p>
         <ul class="select">
-            <select name="place" style="width: 595px;">
+            <select asp-for="place.Id" style="width: 595px;">
                 @{
                     foreach (var place in Model.AllPlaces)
                     {
-                        <option>@place.name</option>
+                        if (Model.place.Id == place.Id)
+                        {
+                            <option selected="selected" value="@place.Id">@place.name</option>
+                        }
+                        else
+                        {
+                            <option value="@place.Id">@place.name</option>
+                        }
+
                     }
                 }
             </select>
@@ -43,30 +66,60 @@
                 <div class="title">
                     <h3>Техника @(i + 1)</h3>
                 </div>
+                @{
+                    if (i > 0)
+                    {
+                        <ul class="actions">
+
+                            <li><input asp-route-timeq="@Model.timeq" asp-route-quantity="@Model.quantity" asp-route-del="true" asp-route-delindex="i" class="button large" type="submit" value="Удалить"></li>
+                        </ul>
+                    }
+                }
             </header>
             <footer>
+
                 <p style="width: 300px;"><font size=5>Тип техники:</font></p>
                 <ul class="select">
-                    <select id="technic" name="technic" style="width: 595px;">
+                    <select asp-for="@Model.technics[i].TypeTechnic.Id" class="form-control" onchange="func2(@i, @Model.quantity)" id="technic+@i" style="width: 595px;">
                         @{
-                            Model.currType = Model.AllTypeTechnics.First();
+
                             foreach (var type in Model.AllTypeTechnics)
                             {
-                                <option>@type.name</option>
+                                if (type.Id != Model.technics[i].TypeTechnic.Id)
+                                {
+                                    <option value="@type.Id">@type.name</option>
+                                }
+                                else
+                                {
+                                    <option selected="selected" value="@type.Id">@type.name</option>
+
+
+                                }
                             }
                         }
                     </select>
                 </ul>
             </footer>
+
+
             @*Тут в зависимости от выбранного типа*@
             <footer>
                 <p style="width: 300px;"><font size=5>Количество:</font></p>
                 <ul class="select">
-                    <select id="quantity" name="quantity" style="width: 595px;">
+                    <select asp-for="technics[i].quantity" id="quantity+@i" class="form-control" style="width: 595px;">
                         @{
-                            for (int j = 0; j < Model.currType.quantity; j++)
+
+                            for (int j = 0; j < Model.technics[i].TypeTechnic.quantity; j++)
                             {
-                                <option>@(j + 1)</option>
+                                if (j + 1 == Model.technics[i].quantity)
+                                {
+                                    <option value="@(j+1) selected="selected">@(j + 1)</option>
+                                }
+                                else
+                                {
+                                    <option value="@(j+1)">@(j + 1)</option>
+                                }
+
 
                             }
                         }
@@ -78,9 +131,66 @@
             <footer>
                 <p style="width: 300px;"><font size=5>Задержка:</font></p>
                 <ul class="select">
-                    <select name="delay" style="width: 595px;">
-                        <option value="q1">00:00</option>
-                        <option value="q2">00:30</option>
+                    <select asp-for="technics[i].delay" onchange="func3(@i)" id="delay+@i" style="width: 595px;">
+                        @{
+                            for (int j = 0; j < Model.timeq - 1; j++)
+                            {
+
+                                if (j % 2 == 0)
+                                {
+                                    if (j == Model.technics[i].delay)
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option selected="selected" value="@j">0@(j / 2):00</option>
+}
+                                        else
+                                        {
+                                            <option selected="selected" value="@j">@(j / 2):00</option>
+}
+                                    }
+                                    else
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option value="@j">0@(j / 2):00</option>
+}
+                                        else
+                                        {
+                                            <option value="@j">@(j / 2):00</option>
+}
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (j == Model.technics[i].delay)
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option selected="selected" value="@j">0@(j / 2):30</option>
+}
+                                        else
+                                        {
+                                            <option selected="selected" value="@j">@(j / 2):30</option>
+}
+                                    }
+                                    else
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option value="@j">0@(j / 2):30</option>
+}
+                                        else
+                                        {
+                                            <option value="@j">@(j / 2):30</option>
+}
+                                    }
+
+                                }
+                            }
+                        }
+
                     </select>
                 </ul>
             </footer>
@@ -88,9 +198,65 @@
             <footer>
                 <p style="width: 300px;"><font size=5>Продолжительность:</font></p>
                 <ul class="select">
-                    <select name="duration" style="width: 595px;">
-                        <option value="q1">00:00</option>
-                        <option value="q2">00:30</option>
+                    <select asp-for="technics[i].duration" id="duration+@i" style="width: 595px;">
+                        @{
+                            for (int j = 1; j < Model.timeq; j++)
+                            {
+                                if (j % 2 == 0)
+                                {
+                                    if (j == Model.technics[i].duration)
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option selected="selected" value="@j">0@(j / 2):00</option>
+}
+                                        else
+                                        {
+                                            <option selected="selected" value="@j">@(j / 2):00</option>
+}
+                                    }
+                                    else
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option value="@j">0@(j / 2):00</option>
+}
+                                        else
+                                        {
+                                            <option value="@j">@(j / 2):00</option>
+}
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (j == Model.technics[i].duration)
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option selected="selected" value="@j">0@(j / 2):30</option>
+}
+                                        else
+                                        {
+                                            <option selected="selected" value="@j">@(j / 2):30</option>
+}
+                                    }
+                                    else
+                                    {
+                                        if (j < 20)
+                                        {
+                                            <option value="@j">0@(j / 2):30</option>
+}
+                                        else
+                                        {
+                                            <option value="@j">@(j / 2):30</option>
+}
+                                    }
+
+                                }
+                            }
+                        }
+
                     </select>
                 </ul>
             </footer>
@@ -98,18 +264,18 @@
             <footer>
                 <p style="width: 300px;"><font size=5>Вложить файл:</font></p>
                 <ul class="file">
-                    <input type="file" name="f">
+                    <input type="file" asp-for="technics[i].path">
                 </ul>
             </footer>
 
             <footer>
                 <p style="width: 300px;"><font size=5>Исполнитель:</font></p>
                 <ul class="select">
-                    <select name="place" style="width: 595px;">
+                    <select asp-for="technics[i].executor.Id" class="form-control" style="width: 595px;">
                         @{
                             foreach (var executor in Model.AllExecutors)
                             {
-                                <option>@executor.User.name</option>
+                                <option value="@executor.Id">@executor.User.name</option>
                             }
                         }
                     </select>
@@ -123,6 +289,78 @@
 
 <article class="post">
     <ul class="actions">
-        <li><a class="button" asp-controller="Section2" asp-action="Index" asp-route-quantity="@Model.quantity">Добавить технику</a></li>
+        <li><input asp-route-quantity="@Model.quantity" asp-route-timeq="@Model.timeq" class="button" type="submit" value="Добавить технику"></li>
+
     </ul>
 </article>
+
+<ul class="actions pagination">
+<li><input asp-route-res="@true" class="button  large" type="submit" value="Подать заявку"></li>
+<li><a href="/Section1/" class="button large">К разделу 1</a></li>
+                </ul>
+
+<script>
+       function func1(i) {
+        var op1;
+
+        for (var j = 0; j < i; j++) {
+            op1 = document.getElementById("technic+" + j).options;
+            for (var k = 0; k < op1.length; k++) {
+                op1[k].disabled = false;
+            }
+        }
+        var val;
+        var op2;
+        for (var m = 0; m < i; m++) {
+            op1 = document.getElementById("technic+" + m);
+            val = op1.value;
+            for (var jj = 0; jj < i; jj++) {
+                if (m != jj) {
+                    op2 = document.getElementById("technic+" + jj).options;
+                    for (var l = 0; l < op2.length; l++) {
+
+                        if (val == op2[l].value) op2[l].disabled = true;
+
+                    }
+                }
+            }
+
+
+        }
+    }
+    func1(@Model.quantity);
+</script>
+
+<script>
+    function func2(i, maxi) {
+        var op = document.getElementById("technic+" + i).value;
+        var Quan = document.getElementById("Quntity");
+        var objSel = document.getElementById("quantity+" + i);
+        for (var j = objSel.length; j > 0; j--) {
+            objSel.remove(j);
+        }
+        if (op > 0) op = op - 1;
+        objSel.options.length = Quan[op].value;
+        for (var j = 0; j < Quan[op].value; j++) {
+
+            objSel.options[j].text = j + 1;
+            objSel.options[j].value = j + 1;
+
+        }
+        func1(maxi);
+    }
+
+</script>
+
+<script>
+    function func3(i) {
+        var val = document.getElementById("delay+" + i).value;
+        var op = document.getElementById("duration+" + i).options;
+        for (var j = 0; j < op.length; j++) {
+            op[j].disabled = false;
+        }
+        for (var k = op.length - 1; k >= (op.length - val); k--) {
+            op[k].disabled = true;
+        }
+    }
+</script>

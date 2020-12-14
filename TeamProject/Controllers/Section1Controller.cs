@@ -49,14 +49,20 @@ namespace TeamProject.Controllers
             Request request = new Request
             {
                 ShopId = shopId,
+                Shop = _allShops.AllShops.First(s => s.Id == shopId),
                 ResponsibleId = responsibleId,
+                Responsible = _allResponsibles.AllResponsibles.First(r => r.Id == responsibleId),
                 begin = date_b,
                 end = date_e,
                 description = model.description,
                 comment = model.comment
             };
-            TempData["request"] = JsonConvert.SerializeObject(request);
-            return RedirectToAction("Index", "ViewRequests");
+            TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                        new JsonSerializerSettings()
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        });
+            return RedirectToAction("Index", "Section2");
         }
     }
 }

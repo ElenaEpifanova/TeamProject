@@ -569,3 +569,6 @@ D:\Documents\Mus2\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.ge
 D:\Documents\Mus2\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\Documents\Mus2\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Documents\Mus2\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

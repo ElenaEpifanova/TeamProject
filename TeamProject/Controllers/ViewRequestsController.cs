@@ -26,7 +26,7 @@ namespace TeamProject.Controllers
             //--Получение объекта
             object request;
             TempData.TryGetValue("request", out request);
-            request = JsonConvert.DeserializeObject<Request>((string)request);
+            //request = JsonConvert.DeserializeObject<Request>((string)request);
             obj.request = request as Request;
             //--End
             return View(obj);
