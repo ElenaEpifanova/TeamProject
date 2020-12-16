@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using TeamProject.Data;
 using TeamProject.Data.interfaces;
 using TeamProject.Data.Repository;
+using TeamProject.Data.Models;
 
 namespace TeamProject
 {
@@ -35,9 +36,15 @@ namespace TeamProject
             services.AddTransient<ITypeTechnic, TypeTechnicRepository>();
             services.AddTransient<IUser, UserRepository>();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => AddRequest.GetRequest(sp));
+            services.AddScoped(sp => AddTechnic.GetTechnic(sp));
+
             IServiceCollection serviceCollections = services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddControllersWithViews().AddNewtonsoftJson();
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +57,7 @@ namespace TeamProject
 
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
 

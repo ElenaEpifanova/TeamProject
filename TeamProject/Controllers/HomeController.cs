@@ -15,11 +15,13 @@ namespace TeamProject.Controllers
     {
         private readonly IRequest _allRequests;
         private readonly AddRequest _addRequest;
+        private readonly AddTechnic _addTechnic;
 
-        public HomeController(IRequest iAllRequests /*AddRequest addRequest*/)
+        public HomeController(IRequest iAllRequests, AddRequest addRequest, AddTechnic addTechnic)
         {
             _allRequests = iAllRequests;
-            //_addRequest = addRequest;
+            _addRequest = addRequest;
+            _addTechnic = addTechnic;
         }
 
         public ViewResult Index()
@@ -69,14 +71,23 @@ namespace TeamProject.Controllers
             TempData.TryGetValue("request", out request);
             request = JsonConvert.DeserializeObject<Request>((string)request);
             obj.request = request as Request;
-            obj.AllRequests = _allRequests.AllRequests;
             if (id == 1)
                 return RedirectToAction("Index", "Section1"); // отсылочка к редактуре 1
             if (id == 2)
                 return RedirectToAction("Index", "Section2"); // отсылочка к редактуре 2
             else
             {
-                //_addRequest.Add_Request(1, 1, new DateTime(2000, 12, 12), new DateTime(2000, 12, 12), "12", "12", 1);
+                _addRequest.Add_Request(obj.request.ShopId, obj.request.ResponsibleId, obj.request.begin, obj.request.end, obj.request.description, obj.request.comment, obj.request.PlaceId);
+                obj.AllRequests = _allRequests.AllRequests;
+
+                int requestID = obj.AllRequests.Last().Id;
+
+                for (int i = 0; i < obj.request.technic.Count; i++)
+                {
+                    Technic temp = obj.request.technic[i];
+                    _addTechnic.Add_Technic(temp.TypeTechnicId, temp.quantity, temp.delay, temp.duration, temp.path, temp.ExecutorId, requestID);
+                }
+
                 return RedirectToAction("Index", "Home");
             }
         }
