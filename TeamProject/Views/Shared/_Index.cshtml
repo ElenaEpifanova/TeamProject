@@ -19,23 +19,24 @@
         <!-- Main -->
         <div id="main">
 
-            <!-- Post -->
-            <article class="post">
-                <header>
-                    <div class="title">
-                        <h2>Журнал заявок</h2>
-                    </div>
-                </header>
+            <form asp-action="Index" method="post">
+                <!-- Post -->
+                <article class="post">
+                    <header>
+                        <div class="title">
+                            <h2>Журнал заявок</h2>
+                        </div>
+                    </header>
 
-                <table>
-                    <tr><th>№ заявки</th><th>Дата</th><th>ФИО ответственного</th><th>Цех</th><th>Описание работ</th></tr>
-                    @RenderBody()
-                </table>
-                <ul class="actions">
-                    <li><a href="/Section1/" class="button">Добавить заявку</a></li>
-                </ul>
-            </article>
-
+                    <table>
+                        <tr><th>№ заявки</th><th>Дата</th><th>ФИО ответственного</th><th>Цех</th><th>Описание работ</th></tr>
+                        @RenderBody()
+                    </table>
+                    <ul class="actions">
+                        <li><a href="/Section1/" class="button">Добавить заявку</a></li>
+                    </ul>
+                </article>
+            </form>
         </div>
 
         <!-- Footer -->

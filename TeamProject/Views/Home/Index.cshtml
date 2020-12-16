@@ -4,17 +4,18 @@
 @{
     Layout = "_Index";
 }
+
 @{
     int i = 1;
     foreach (var request in Model.AllRequests)
     {
-    <tr>
-        <td>@i</td>
-        <td>@request.begin.ToString().Substring(0, 10)</td>
-        <td>@request.Responsible.User.name</td>
-        <td>@request.Shop.name</td>
-        <td>@request.description &nbsp;(<a asp-controller="Home" asp-action="View1" asp-route-id="@request.Id">Подробнее...</a>)</td>
-    </tr>
+        <tr>
+            <td>@i</td>
+            <td>@request.begin.ToString().Substring(0, 10)</td>
+            <td>@request.Responsible.User.name</td>
+            <td>@request.Shop.name</td>
+            <td>@request.description &nbsp;(<a asp-action="View" asp-route-id="@request.Id">Подробнее...</a>)
+        </tr>
         i++;
     }
 }

@@ -9,7 +9,7 @@ namespace TeamProject.ViewModels
     public class HomeViewModel
     {
         public IEnumerable <Request> AllRequests { get; set; }
-        public Request request { get; set; }
+        public Request request { get; set; } = new Request();
 
     }
 }
