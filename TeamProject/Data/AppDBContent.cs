@@ -33,13 +33,13 @@ namespace TeamProject.Data
         {
 
             modelBuilder.Entity<Technic>()
-                .HasOne(m => m.request)
+                .HasOne(m => m.Request)
                 .WithMany(t => t.technic)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Request>()
             .HasMany(m => m.technic)
-            .WithOne(t => t.request)
+            .WithOne(t => t.Request)
             .OnDelete(DeleteBehavior.Restrict);
 
         }

@@ -59,7 +59,7 @@ namespace TeamProject.Controllers
             //
             obj.technics[0].TypeTechnic = _allTypeTechnics.AllType.First();
             obj.technics[0].TypeTechnicId = obj.technics[0].TypeTechnic.Id;
-            obj.technics[0].executor = _allExecutors.AllExecutors.First();
+            obj.technics[0].Executor = _allExecutors.AllExecutors.First();
 
             return View(obj);
         }
@@ -89,7 +89,7 @@ namespace TeamProject.Controllers
                 else if (obj.quantity < _allTypeTechnics.AllType.Count()) obj.quantity++;
                 if (obj.quantity < 1) obj.quantity = 1;
 
-                while (obj.technics.Count < obj.quantity) obj.technics.Add(new Technic { TypeTechnic = _allTypeTechnics.AllType.ElementAt(obj.technics.Count), executor = _allExecutors.AllExecutors.First() });
+                while (obj.technics.Count < obj.quantity) obj.technics.Add(new Technic { TypeTechnic = _allTypeTechnics.AllType.ElementAt(obj.technics.Count), Executor = _allExecutors.AllExecutors.First() });
             }
 
             // - Place -
@@ -108,8 +108,8 @@ namespace TeamProject.Controllers
             // - Executor -
             for (int i = 0; i < obj.technics.Count; i++)
             {
-                Executor temp = _allExecutors.AllExecutors.First(C => C.Id == obj.technics[i].executor.Id);
-                obj.technics[i].executor = temp;
+                Executor temp = _allExecutors.AllExecutors.First(C => C.Id == obj.technics[i].Executor.Id);
+                obj.technics[i].Executor = temp;
                 obj.technics[i].ExecutorId = temp.Id;
             }
 
@@ -126,7 +126,7 @@ namespace TeamProject.Controllers
                 req.PlaceId = obj.place.Id;
                 for (int i = 0; i < obj.technics.Count; i++)
                 {
-                    obj.technics[i].request = req;
+                    obj.technics[i].Request = req;
                 }
                 TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
                       new JsonSerializerSettings()
@@ -139,7 +139,7 @@ namespace TeamProject.Controllers
                 return RedirectToAction("Index", "Section1");
             }
 
-            if (res) return RedirectToAction("Index", "ViewRequests");
+            if (res) return RedirectToAction("Supply", "ViewRequests");
             else return View(obj);
 
         }

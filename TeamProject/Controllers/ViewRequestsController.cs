@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TeamProject.ViewModels;
 using TeamProject.Data.Models;
 using Newtonsoft.Json;
+using TeamProject.Data;
 
 namespace TeamProject.Controllers
 {
@@ -23,27 +24,43 @@ namespace TeamProject.Controllers
         {
             ViewRequestsViewModel obj = new ViewRequestsViewModel();
             obj.AllRequests = _allRequests.AllRequests;
-            //--Получение объекта
-            object request;
-            TempData.TryGetValue("request", out request);
-            //request = JsonConvert.DeserializeObject<Request>((string)request);
-            obj.request = request as Request;
-            //--End
             return View(obj);
         }
 
-        public ViewResult ViewRequest()
+        public ViewResult Supply()
         {
             ViewRequestsViewModel obj = new ViewRequestsViewModel();
             obj.AllRequests = _allRequests.AllRequests;
-
-            return View(obj);
+            //--Получение объекта
+            object request;
+            TempData.TryGetValue("request", out request);
+            request = JsonConvert.DeserializeObject<Request>((string)request);
+            obj.request = request as Request;
+            //--End
+            return View("SupplyRequest", obj);
         }
 
-        public RedirectToActionResult ViewRequest(int id)
+        [HttpGet]
+        public IActionResult View1(int id)
         {
-            var item = _allRequests.AllRequests.FirstOrDefault(i => i.Id == id);
-            return RedirectToAction("ViewRequest");
+            ViewRequestsViewModel obj = new ViewRequestsViewModel();
+            obj.AllRequests = _allRequests.AllRequests;
+            obj.request = _allRequests.AllRequests.FirstOrDefault(i => i.Id == id);
+            return View("ViewRequest", obj);
+        }
+        public IActionResult View2(int id)
+        {
+            ViewRequestsViewModel obj = new ViewRequestsViewModel();
+
+            TempData["request"] = JsonConvert.SerializeObject(obj.request, Formatting.None,
+                        new JsonSerializerSettings()
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        });
+            if (id == 1)
+                return RedirectToAction("Index", "Section1");
+            else
+                return RedirectToAction("Index", "Section2");
         }
     }
 }

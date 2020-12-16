@@ -10,8 +10,11 @@ namespace TeamProject.Data
 {
     public class DBObjects
     {
+        public static AppDBContent Content;
+
         public static void Initial(AppDBContent content)
         {
+            Content = content;
             if (!content.User.Any())
                 content.User.AddRange(Users.Select(c => c.Value));
 
@@ -63,18 +66,18 @@ namespace TeamProject.Data
                     );
 
                 content.Technic.Add
-                        (
-                            new Technic
-                            {
-                                TypeTechnic = TypesTechnic["Автокран"],
-                                quantity = 2,
-                                delay = 0,
-                                duration = 36,
-                                path = "Скв316_от_02_10.pdf",
-                                ExecutorId = 1,
-                                RequestId = 1
-                            }
-                         );
+                    (
+                        new Technic
+                        {
+                            TypeTechnic = TypesTechnic["Автокран"],
+                            quantity = 2,
+                            delay = 0,
+                            duration = 36,
+                            path = "Скв316_от_02_10.pdf",
+                            ExecutorId = 1,
+                            RequestId = 1
+                        }
+                        );
             }
            
             content.SaveChanges();

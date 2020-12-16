@@ -13,7 +13,7 @@
         <td>@request.begin.ToString().Substring(0, 10)</td>
         <td>@request.Responsible.User.name</td>
         <td>@request.Shop.name</td>
-        <td>@request.description</td>
+        <td>@request.description &nbsp;(<a asp-controller="ViewRequests" asp-action="View1" asp-route-id="@request.Id">Подробнее...</a>)</td>
     </tr>
         i++;
     }

@@ -7,12 +7,12 @@ namespace TeamProject.Data.Models
 {
     public class Technic
     {
-        public Technic()
+       /* public Technic()
         {
             TypeTechnic = new TypeTechnic();
-            executor = new Executor();
-            request = new Request();
-        }
+            Executor = new Executor();
+            Request = new Request();
+        }*/
         public int Id {set; get;}
         public int TypeTechnicId { set; get; }
         public virtual TypeTechnic TypeTechnic { set; get; }
@@ -22,7 +22,7 @@ namespace TeamProject.Data.Models
         public string path { set; get; }
 
         public int ExecutorId { set; get; }
-        public virtual Executor executor { set; get; }
+        public virtual Executor Executor { set; get; }
 
 
 
@@ -30,7 +30,7 @@ namespace TeamProject.Data.Models
 
         public int RequestId { set; get; }
 
-        public virtual Request request { set; get; }
+        public virtual Request Request { set; get; }
 
     }
 }

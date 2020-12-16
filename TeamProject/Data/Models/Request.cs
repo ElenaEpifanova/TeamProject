@@ -8,8 +8,6 @@ namespace TeamProject.Data.Models
 
 	public class Request
 	{
-		
-
 		public int Id { set; get; }
 
 		public int ShopId { set; get; }
