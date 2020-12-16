@@ -7,6 +7,7 @@
 
 
 <!-- Post -->
+
 <article class="post">
     <header>
         <div class="title">
@@ -109,135 +110,140 @@ var timeline = new vis.Timeline(container, items, groups, options);
     </script>
 </article>
 
-<article class="post">
-    <header>
-        <div class="title">
-            <h3>Раздел 1</h3>
-        </div>
-        <ul class="actions">
-            <li><a asp-controller="ViewRequests" asp-action="View2" asp-route-id = "1" class="button large">Редактировать</a></li>
-        </ul>
-    </header>
-    @{
-        var request = Model.request;
-        <p><b>Цех: </b> @request.Shop.name </p>
-        <p><b>Ответственный:</b> @request.Responsible.User.name </p>
-        DateTime time = request.begin;
-        string db;
-        if (time.Day < 10)
-            db = '0' + time.Day.ToString();
-        else
-            db = time.Day.ToString();
-        db += '.';
-        if (time.Month < 10)
-            db += '0' + time.Month.ToString();
-        else
-            db += time.Month.ToString();
-        db += '.';
-        db += time.Year.ToString();
-
-        string tb;
-        if (time.Hour < 10)
-            tb = '0' + time.Hour.ToString();
-        else
-            tb = time.Hour.ToString();
-        tb += ':';
-        if (time.Minute < 10)
-            tb += '0' + time.Minute.ToString();
-        else
-            tb += time.Minute.ToString();
-
-        time = request.end;
-        string de;
-        if (time.Day < 10)
-            de = '0' + time.Day.ToString();
-        else
-            de = time.Day.ToString();
-        de += '.';
-        if (time.Month < 10)
-            de += '0' + time.Month.ToString();
-        else
-            de += time.Month.ToString();
-        de += '.';
-        de += time.Year.ToString();
-
-        string te;
-        if (time.Hour < 10)
-            te = '0' + time.Hour.ToString();
-        else
-            te = time.Hour.ToString();
-        te += ':';
-        if (time.Minute < 10)
-            te += '0' + time.Minute.ToString();
-        else
-            te += time.Minute.ToString();
 
 
-        <p><b>Дата: </b> с @db (@tb) по @de (@te) </p>
-        <p>
-            <b>Описание работ: </b>
-            @request.description
-        </p>
-        <p>
-            <b>Комментарий: </b>
-            @request.comment
-        </p>
-    }
-</article>
 
-<article class="post">
-    <header>
-        <div class="title">
-            <h3>Раздел 2</h3>
-        </div>
-        <ul class="actions">
-            <li><a asp-controller="ViewRequests" asp-action="View2" asp-route-id = "2" class="button large">Редактировать</a></li>
-        </ul>
-    </header>
-    @{
-        int i = 1;
-        foreach (var technic in Model.request.technic)
-        {
-            <p> <b><u> ТЕХНИКА @i</u> </b></p>
-            <p><b>Тип техники: </b> @technic.TypeTechnic.name </p>
-            <p><b>Количество:</b> @technic.quantity </p>
-            int hour = technic.delay / 2,
-                minute = technic.delay % 2 * 30;
-            db = "";
-            if (hour < 10)
-                db = '0' + hour.ToString();
+<form asp-action="Supply" method="post">
+    <article class="post">
+        <header>
+            <div class="title">
+                <h3>Раздел 1</h3>
+            </div>
+            <ul class="actions">
+                <li><input asp-route-request="@Model.request" asp-route-id="1" class="button large" type="submit" value="Редактировать"></li>
+            </ul>
+        </header>
+        @{
+            var request = Model.request;
+            <p><b>Цех: </b> @request.Shop.name </p>
+            <p><b>Ответственный:</b> @request.Responsible.User.name </p>
+            DateTime time = request.begin;
+            string db;
+            if (time.Day < 10)
+                db = '0' + time.Day.ToString();
             else
-                db = hour.ToString();
-            db += ':';
-            if (minute < 10)
-                db += '0' + minute.ToString();
+                db = time.Day.ToString();
+            db += '.';
+            if (time.Month < 10)
+                db += '0' + time.Month.ToString();
             else
-                db += minute.ToString();
-            <p><b>Задержка: </b> @db </p>
-            hour = technic.duration / 2;
-            minute = technic.duration % 2 * 30;
-            db = "";
-            if (hour < 10)
-                db = '0' + hour.ToString();
-            else
-                db = hour.ToString();
-            db += ':';
-            if (minute < 10)
-                db += '0' + minute.ToString();
-            else
-                db += minute.ToString();
+                db += time.Month.ToString();
+            db += '.';
+            db += time.Year.ToString();
 
-            <p><b>Продолжительность: </b> @db</p>
-            <p><b>Путь к файлу: </b> @technic.path </p>
-            <p><b>Исполнитель: </b> @technic.Executor.User.name </p>
-            i++;
+            string tb;
+            if (time.Hour < 10)
+                tb = '0' + time.Hour.ToString();
+            else
+                tb = time.Hour.ToString();
+            tb += ':';
+            if (time.Minute < 10)
+                tb += '0' + time.Minute.ToString();
+            else
+                tb += time.Minute.ToString();
+
+            time = request.end;
+            string de;
+            if (time.Day < 10)
+                de = '0' + time.Day.ToString();
+            else
+                de = time.Day.ToString();
+            de += '.';
+            if (time.Month < 10)
+                de += '0' + time.Month.ToString();
+            else
+                de += time.Month.ToString();
+            de += '.';
+            de += time.Year.ToString();
+
+            string te;
+            if (time.Hour < 10)
+                te = '0' + time.Hour.ToString();
+            else
+                te = time.Hour.ToString();
+            te += ':';
+            if (time.Minute < 10)
+                te += '0' + time.Minute.ToString();
+            else
+                te += time.Minute.ToString();
+
+
+            <p><b>Дата: </b> с @db (@tb) по @de (@te) </p>
+            <p>
+                <b>Описание работ: </b>
+                @request.description
+            </p>
+            <p>
+                <b>Комментарий: </b>
+                @request.comment
+            </p>
         }
-    }
-</article>
+    </article>
 
-<article class="post">
-    <ul class="actions">
-        <li><a asp-controller="ViewRequests" asp-action="View2" asp-route-id = 3 class="button large">Подать заявку</a></li>
-    </ul>
-</article>
+    <article class="post">
+        <header>
+            <div class="title">
+                <h3>Раздел 2</h3>
+            </div>
+            <ul class="actions">
+                <li><input asp-route-request="@Model.request" asp-route-id="2" class="button large" type="submit" value="Редактировать"></li>
+            </ul>
+        </header>
+        @{
+            int i = 1;
+            foreach (var technic in Model.request.technic)
+            {
+                <p> <b><u> ТЕХНИКА @i</u> </b></p>
+                <p><b>Тип техники: </b> @technic.TypeTechnic.name </p>
+                <p><b>Количество:</b> @technic.quantity </p>
+                int hour = technic.delay / 2,
+                    minute = technic.delay % 2 * 30;
+                db = "";
+                if (hour < 10)
+                    db = '0' + hour.ToString();
+                else
+                    db = hour.ToString();
+                db += ':';
+                if (minute < 10)
+                    db += '0' + minute.ToString();
+                else
+                    db += minute.ToString();
+                <p><b>Задержка: </b> @db </p>
+                hour = technic.duration / 2;
+                minute = technic.duration % 2 * 30;
+                db = "";
+                if (hour < 10)
+                    db = '0' + hour.ToString();
+                else
+                    db = hour.ToString();
+                db += ':';
+                if (minute < 10)
+                    db += '0' + minute.ToString();
+                else
+                    db += minute.ToString();
 
+                <p><b>Продолжительность: </b> @db</p>
+                <p><b>Путь к файлу: </b> @technic.path </p>
+                <p><b>Исполнитель: </b> @technic.Executor.User.name </p>
+                i++;
+            }
+        }
+    </article>
+
+    <article class="post">
+        <ul class="actions">
+            <li><input asp-route-request="@Model.request" asp-route-id="3" class="button large" type="submit" value="Подать заявку"></li>
+        </ul>
+    </article>
+
+ </form>

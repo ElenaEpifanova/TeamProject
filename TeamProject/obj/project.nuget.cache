@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N42gCMCbuY4AEG7Ccxn0/F+8OBwuVx9XueZaKDbiJcwoMo+ztBHbBeMyjtTO9dKnMfHQQivV3Wv0ExrxcQPjkw==",
+  "dgSpecHash": "jOqE9QGjDZm88UWEK5TjRtqou8dy2AROqaNiiw2QE7LrT780Jz4kD7aT0z8f3F4xCrcwrjdC7UdfsJKvmVQ5Gw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mlaym\\OneDrive\\Рабочий стол\\TeamProject\\TeamProject.csproj",
+  "projectFilePath": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mlaym\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\mlaym\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

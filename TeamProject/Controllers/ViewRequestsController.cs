@@ -14,10 +14,12 @@ namespace TeamProject.Controllers
     public class ViewRequestsController : Controller
     {
         private readonly IRequest _allRequests;
+        //private readonly AddRequest _addRequest;
 
-        public ViewRequestsController(IRequest iAllRequests, IShop iAllShops, IResponsible iAllResponsibles)
+        public ViewRequestsController(IRequest iAllRequests)
         {
             _allRequests = iAllRequests;
+            //_addRequest = addRequest;
         }
 
         public ViewResult Index()
@@ -29,17 +31,29 @@ namespace TeamProject.Controllers
 
         public ViewResult Supply()
         {
-            ViewRequestsViewModel obj = new ViewRequestsViewModel();
-            obj.AllRequests = _allRequests.AllRequests;
-            //--Получение объекта
-            object request;
-            TempData.TryGetValue("request", out request);
-            request = JsonConvert.DeserializeObject<Request>((string)request);
-            obj.request = request as Request;
+            try
+            {
+                ViewRequestsViewModel obj = new ViewRequestsViewModel();
+                obj.AllRequests = _allRequests.AllRequests;
+                //--Получение объекта
+                object request;
+                TempData.TryGetValue("request", out request);
+                request = JsonConvert.DeserializeObject<Request>((string)request);
+                obj.request = request as Request;
+                TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                     new JsonSerializerSettings()
+                     {
+                         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                     });
+                return View("SupplyRequest", obj);
+            }
+            catch (Exception)
+            {
+                return View("Index", "Section2");
+            }
             //--End
-            return View("SupplyRequest", obj);
         }
-
+        
         [HttpGet]
         public IActionResult View1(int id)
         {
@@ -48,19 +62,23 @@ namespace TeamProject.Controllers
             obj.request = _allRequests.AllRequests.FirstOrDefault(i => i.Id == id);
             return View("ViewRequest", obj);
         }
-        public IActionResult View2(int id)
+        [HttpPost]
+        public IActionResult Supply(ViewRequestsViewModel obj, int id)
         {
-            ViewRequestsViewModel obj = new ViewRequestsViewModel();
-
-            TempData["request"] = JsonConvert.SerializeObject(obj.request, Formatting.None,
-                        new JsonSerializerSettings()
-                        {
-                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        });
+            object request;
+            TempData.TryGetValue("request", out request);
+            request = JsonConvert.DeserializeObject<Request>((string)request);
+            obj.request = request as Request;
+            obj.AllRequests = _allRequests.AllRequests;
             if (id == 1)
-                return RedirectToAction("Index", "Section1");
+                return RedirectToAction("Index", "Section1"); // отсылочка к редактуре 1
+            if (id == 2)
+                return RedirectToAction("Index", "Section2"); // отсылочка к редактуре 2
             else
-                return RedirectToAction("Index", "Section2");
+            {
+                //_addRequest.Add_Request(1, 1, new DateTime(2000, 12, 12), new DateTime(2000, 12, 12), "12", "12", 1);
+                return RedirectToAction("Index", "ViewRequests");
+            }
         }
     }
 }

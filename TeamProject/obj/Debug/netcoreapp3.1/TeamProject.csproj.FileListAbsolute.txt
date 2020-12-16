@@ -577,7 +577,6 @@ C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\bin\De
 C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\SupplyRequest.cshtml.g.cs
-C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csprojAssemblyReference.cache
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\bin\Debug\netcoreapp3.1\dbsettings.json
@@ -677,3 +676,5 @@ C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\obj\Debug\netcoreapp
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.dll
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.pdb
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.genruntimeconfig.cache
+C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\Index1.cshtml.g.cs
+C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csprojAssemblyReference.cache

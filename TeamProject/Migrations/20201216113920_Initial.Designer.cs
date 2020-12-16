@@ -10,8 +10,8 @@ using TeamProject.Data;
 namespace TeamProject.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20201205132615_One")]
-    partial class One
+    [Migration("20201216113920_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
