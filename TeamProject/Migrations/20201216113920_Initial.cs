@@ -238,6 +238,9 @@ namespace TeamProject.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "AddRequest");
         }
     }
 }

@@ -139,7 +139,7 @@ namespace TeamProject.Controllers
                 return RedirectToAction("Index", "Section1");
             }
 
-            if (res) return RedirectToAction("Supply", "ViewRequests");
+            if (res) return RedirectToAction("Supply", "Home");
             else return View(obj);
 
         }

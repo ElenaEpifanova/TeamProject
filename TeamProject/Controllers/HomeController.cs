@@ -11,12 +11,12 @@ using TeamProject.Data;
 
 namespace TeamProject.Controllers
 {
-    public class ViewRequestsController : Controller
+    public class HomeController : Controller
     {
         private readonly IRequest _allRequests;
-        //private readonly AddRequest _addRequest;
+        private readonly AddRequest _addRequest;
 
-        public ViewRequestsController(IRequest iAllRequests)
+        public HomeController(IRequest iAllRequests /*AddRequest addRequest*/)
         {
             _allRequests = iAllRequests;
             //_addRequest = addRequest;
@@ -24,7 +24,7 @@ namespace TeamProject.Controllers
 
         public ViewResult Index()
         {
-            ViewRequestsViewModel obj = new ViewRequestsViewModel();
+            HomeViewModel obj = new HomeViewModel();
             obj.AllRequests = _allRequests.AllRequests;
             return View(obj);
         }
@@ -33,7 +33,7 @@ namespace TeamProject.Controllers
         {
             try
             {
-                ViewRequestsViewModel obj = new ViewRequestsViewModel();
+                HomeViewModel obj = new HomeViewModel();
                 obj.AllRequests = _allRequests.AllRequests;
                 //--Получение объекта
                 object request;
@@ -57,13 +57,13 @@ namespace TeamProject.Controllers
         [HttpGet]
         public IActionResult View1(int id)
         {
-            ViewRequestsViewModel obj = new ViewRequestsViewModel();
+            HomeViewModel obj = new HomeViewModel();
             obj.AllRequests = _allRequests.AllRequests;
             obj.request = _allRequests.AllRequests.FirstOrDefault(i => i.Id == id);
             return View("ViewRequest", obj);
         }
         [HttpPost]
-        public IActionResult Supply(ViewRequestsViewModel obj, int id)
+        public IActionResult Supply(HomeViewModel obj, int id)
         {
             object request;
             TempData.TryGetValue("request", out request);
@@ -77,7 +77,7 @@ namespace TeamProject.Controllers
             else
             {
                 //_addRequest.Add_Request(1, 1, new DateTime(2000, 12, 12), new DateTime(2000, 12, 12), "12", "12", 1);
-                return RedirectToAction("Index", "ViewRequests");
+                return RedirectToAction("Index", "Home");
             }
         }
     }
