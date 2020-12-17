@@ -44,6 +44,11 @@ namespace TeamProject.Controllers
             obj.request = request as Request;
             string str = SctiptGraphic(obj.request);
             Graphic(str);
+            TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                     new JsonSerializerSettings()
+                     {
+                         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                     });
             return View("SupplyRequest", obj);
             //--End
         }
@@ -66,9 +71,23 @@ namespace TeamProject.Controllers
             request = JsonConvert.DeserializeObject<Request>((string)request);
             obj.request = request as Request;
             if (id == 1)
+            {
+                /*TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                     new JsonSerializerSettings()
+                     {
+                         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                     });*/
                 return RedirectToAction("Index", "Section1"); // отсылочка к редактуре 1
+            }
             if (id == 2)
+            {
+                /*TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                     new JsonSerializerSettings()
+                     {
+                         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                     });*/
                 return RedirectToAction("Index", "Section2"); // отсылочка к редактуре 2
+            }
             else
             {
                 _addRequest.Add_Request(obj.request.ShopId, obj.request.ResponsibleId, obj.request.begin, obj.request.end, obj.request.description, obj.request.comment, obj.request.PlaceId);

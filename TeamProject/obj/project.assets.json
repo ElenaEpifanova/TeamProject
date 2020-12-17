@@ -8261,11 +8261,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mlaym\\OneDrive\\Рабочий стол\\TeamProject\\TeamProject.csproj",
+      "projectUniqueName": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
       "projectName": "TeamProject",
-      "projectPath": "C:\\Users\\mlaym\\OneDrive\\Рабочий стол\\TeamProject\\TeamProject.csproj",
+      "projectPath": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
       "packagesPath": "C:\\Users\\mlaym\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mlaym\\OneDrive\\Рабочий стол\\TeamProject\\obj\\",
+      "outputPath": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mlaym\\AppData\\Roaming\\NuGet\\NuGet.Config",
