@@ -42,6 +42,7 @@ namespace TeamProject.Controllers
             TempData.TryGetValue("request", out request);
             request = JsonConvert.DeserializeObject<Request>((string)request);
             obj.request = request as Request;
+            TempData.Remove("request");
             string str = SctiptGraphic(obj.request);
             Graphic(str);
             TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
@@ -70,6 +71,7 @@ namespace TeamProject.Controllers
             TempData.TryGetValue("request", out request);
             request = JsonConvert.DeserializeObject<Request>((string)request);
             obj.request = request as Request;
+            TempData.Remove("request");
             if (id == 1)
             {
                 /*TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
@@ -102,7 +104,7 @@ namespace TeamProject.Controllers
                 }
 
                 return RedirectToAction("Index", "Home");
-            }
+            }           
         }
             
         public string SctiptGraphic(Request request)

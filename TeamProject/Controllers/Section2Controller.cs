@@ -34,6 +34,7 @@ namespace TeamProject.Controllers
                 TempData.TryGetValue("request", out request);
                 request = JsonConvert.DeserializeObject<Request>((string)request);
                 Request req = request as Request;
+                TempData.Remove("request");
                 obj.timeq = ((Convert.ToInt32(req.end.Day - req.begin.Day + 1) * 12) - (req.begin.Hour - 8) - (20 - req.end.Hour)) * 2;
                 TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
                        new JsonSerializerSettings()
@@ -121,6 +122,7 @@ namespace TeamProject.Controllers
                 TempData.TryGetValue("request", out request);
                 request = JsonConvert.DeserializeObject<Request>((string)request);
                 Request req = request as Request;
+                TempData.Remove("request");
                 req.technic = obj.technics;
                 req.Place = obj.place;
                 req.PlaceId = obj.place.Id;
