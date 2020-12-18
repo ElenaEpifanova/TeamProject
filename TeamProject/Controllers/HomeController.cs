@@ -10,16 +10,17 @@ using Newtonsoft.Json;
 using TeamProject.Data;
 using System.Text;
 using System.IO;
+using TeamProject.Data.Repository;
 
 namespace TeamProject.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IRequest _allRequests;
-        private readonly AddRequest _addRequest;
-        private readonly AddTechnic _addTechnic;
+        private readonly RequestRepository _addRequest;
+        private readonly TechnicRepository _addTechnic;
 
-        public HomeController(IRequest iAllRequests, AddRequest addRequest, AddTechnic addTechnic)
+        public HomeController(IRequest iAllRequests, RequestRepository addRequest, TechnicRepository addTechnic)
         {
             _allRequests = iAllRequests;
             _addRequest = addRequest;

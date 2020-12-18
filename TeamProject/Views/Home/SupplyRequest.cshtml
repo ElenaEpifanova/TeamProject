@@ -41,6 +41,7 @@
             var request = Model.request;
             <p><b>Цех: </b> @request.Shop.name </p>
             <p><b>Ответственный:</b> @request.Responsible.User.name </p>
+            <p><b>Место работы: </b> @request.Place.name </p>
             DateTime time = request.begin;
             string db;
             if (time.Day < 10)

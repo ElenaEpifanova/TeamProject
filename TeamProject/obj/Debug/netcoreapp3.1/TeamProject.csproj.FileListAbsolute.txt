@@ -778,3 +778,4 @@ D:\Documents\Mus4\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.cs
 D:\Documents\Mus4\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.dll
 D:\Documents\Mus4\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.pdb
 D:\Documents\Mus4\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.genruntimeconfig.cache
+C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csprojAssemblyReference.cache

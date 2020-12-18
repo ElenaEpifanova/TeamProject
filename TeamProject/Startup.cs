@@ -37,8 +37,8 @@ namespace TeamProject
             services.AddTransient<IUser, UserRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(sp => AddRequest.GetRequest(sp));
-            services.AddScoped(sp => AddTechnic.GetTechnic(sp));
+            services.AddScoped(sp => RequestRepository.GetRequest(sp));
+            services.AddScoped(sp => TechnicRepository.GetTechnic(sp));
 
             IServiceCollection serviceCollections = services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddMvc(option => option.EnableEndpointRouting = false);
