@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TeamProject.Program" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Startup" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAABAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Controllers.HomeController" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCICAAAAAAAAAAAAAAAAAAQAFAAACAAEAAAAABAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Controllers.Section1Controller" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\Section1Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Controllers.Section2Controller" Collapsed="true">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAgAAAAgAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\Section2Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.AddRequest" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAKAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\AddRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.AddTechnic" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAQACAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Data\Models\AddTechnic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.Executor" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Executor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.Place" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Place.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.Request" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAQCAAACAAAAAAAAIAAAAAEQIACAAAAAAEAAAAAABAA=</HashCode>
+      <FileName>Data\Models\Request.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.Responsible" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Responsible.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.Shop" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Shop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.Technic">
+    <Position X="1.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAIAAAAAIAQAAAACAAgEAAAAgACAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Technic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.TypeTechnic" Collapsed="true">
+    <Position X="9.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAEACCAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\TypeTechnic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Models.User" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.Repository.ExecutorRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAACAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository\ExecutorRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.Repository.PlaceRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository\PlaceRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.Repository.RequestRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAgQAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository\RequestRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.Repository.ResponsibleRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAACAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Data\Repository\ResponsibleRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.Repository.ShopRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository\ShopReposutory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.Repository.TechnicRepository" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgCAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository\TechnicRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.Repository.TypeTechnicRepository" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository\TypeTechnicRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.Repository.UserRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAQAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TeamProject.Data.AppDBContent" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAABAAAAAQAAIAQAAQAAAAAAEACAgAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Data\AppDBContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Data.DBObjects" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAKAAAgAAAAQAECAEAAQAAAAAQQAAgEAAAAAAAQA=</HashCode>
+      <FileName>Data\DBObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Migrations.Initial" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Migrations\20201216113920_Initial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.Migrations.AppDBContentModelSnapshot" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Migrations\AppDBContentModelSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.ViewModels.HomeViewModel" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\HomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.ViewModels.Section1ViewModel" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIIAAAAAAAAAAIAAAAAAgAAAgAACAgAAAEAAAAAg=</HashCode>
+      <FileName>ViewModels\Section1ViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamProject.ViewModels.Section2ViewModel" Collapsed="true">
+    <Position X="7" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAIAABAgAAAAAggQCCAAAAAAAAEAAA=</HashCode>
+      <FileName>ViewModels\Section2ViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TeamProject.Data.interfaces.IExecutor" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\interfaces\IExecutor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TeamProject.Data.interfaces.IPlace" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\interfaces\IPlace.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TeamProject.Data.interfaces.IRequest" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAA=</HashCode>
+      <FileName>Data\interfaces\IRequest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TeamProject.Data.interfaces.IResponsible" Collapsed="true">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Data\interfaces\IResponsible.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TeamProject.Data.interfaces.IShop" Collapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\interfaces\IShop.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TeamProject.Data.interfaces.ITechnic">
+    <Position X="3.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\interfaces\ITechnic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TeamProject.Data.interfaces.ITypeTechnic" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\interfaces\ITypeTechnic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TeamProject.Data.interfaces.IUser" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\interfaces\IUser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

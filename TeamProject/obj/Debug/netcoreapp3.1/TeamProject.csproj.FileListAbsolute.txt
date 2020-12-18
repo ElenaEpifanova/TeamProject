@@ -459,8 +459,6 @@ D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Section1.cshtml.g.cs
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Section2.cshtml.g.cs
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_View.cshtml.g.cs
-D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\Index.cshtml.g.cs
-D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\ViewRequests\ViewRequest.cshtml.g.cs
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.RazorTargetAssemblyInfo.cs
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.Views.pdb
 D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csproj.CopyComplete
@@ -676,3 +674,8 @@ C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\De
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\SupplyRequest.cshtml.g.cs
 C:\Users\mlaym\OneDrive\Рабочий стол\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\ViewRequest.cshtml.g.cs
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+D:\data\5 term\командный проект\TeamProject\TeamProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\SupplyRequest.cshtml.g.cs
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\ViewRequest.cshtml.g.cs
