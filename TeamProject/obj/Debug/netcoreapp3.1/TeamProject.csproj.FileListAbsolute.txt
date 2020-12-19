@@ -779,3 +779,5 @@ D:\Documents\Mus4\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.dl
 D:\Documents\Mus4\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.pdb
 D:\Documents\Mus4\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.genruntimeconfig.cache
 C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.csprojAssemblyReference.cache
+C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Reference.cshtml.g.cs
+C:\Users\mlaym\OneDrive\Документы\GitHub\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Reference.cshtml.g.cs

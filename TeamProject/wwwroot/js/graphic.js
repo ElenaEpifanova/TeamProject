@@ -9,16 +9,7 @@ items.add(
 [{id: 1,
 content: 'Автогрейдер',
 start: '2020-12-19T08:00:00' ,
-end: '2020-12-21T10:30:00',
-group: 'bar',
-subgroup: 'sg_1',
-subgroupOrder: 0 },
-]);
-items.add(
-[{id: 2,
-content: 'Автокран',
-start: '2020-12-20T18:30:00' ,
-end: '2020-12-29T17:00:00',
+end: '2020-12-19T08:30:00',
 group: 'bar',
 subgroup: 'sg_1',
 subgroupOrder: 0 },
@@ -26,6 +17,6 @@ subgroupOrder: 0 },
 var container = document.getElementById('visualization'); 
 var options = { 
 start:'2020-12-18',
-end:'2020-12-31' ,
+end:'2020-12-23' ,
 };
 var timeline = new vis.Timeline(container, items, groups, options); 

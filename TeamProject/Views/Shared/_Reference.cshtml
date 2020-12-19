@@ -1,17 +1,15 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-    <title>Составление заявки</title>
+    <title>Справка</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <script src="~/js/vis-timeline-graph2d.min.js"></script>
     <link rel="stylesheet" href="~/css/main.css" />
 </head>
 <body class="single is-preload">
 
     <!-- Wrapper -->
     <div id="wrapper">
-
         <!-- Header -->
         <header id="header">
             <h1><a href="/Home/">Журнал заявок</a></h1>
@@ -21,9 +19,15 @@
 
         <!-- Main -->
         <div id="main">
-
-                @RenderBody()
+            @RenderBody()
         </div>
+
+        <!-- Footer -->
+        <section id="footer">
+            <p class="copyright">&copy; Епифанова Е.Л.  Морозова А.Р.  Нурушева А.Р.  (АГТУ)</p>
+        </section>
+
+    </div>
 
     <!-- Scripts -->
     <script src="~/js/util.js"></script>

@@ -50,5 +50,10 @@ namespace TeamProject.Data.Repository
                 );
             appDBContent.SaveChanges();
         }
+        public void Up_Request(Request request)
+        {
+            appDBContent.Request.Update(request);
+            appDBContent.SaveChanges();
+        }
     }
 }

@@ -54,6 +54,10 @@ namespace TeamProject.Data.Repository
             appDBContent.SaveChanges();
         }
 
-
+        public void Rem_Technic(Technic technic)
+        {
+            appDBContent.Technic.Remove(technic);
+            appDBContent.SaveChanges();
+        }
     }
 }

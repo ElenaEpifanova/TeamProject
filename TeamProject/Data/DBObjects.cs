@@ -34,53 +34,6 @@ namespace TeamProject.Data
                 content.Place.AddRange(Places.Select(c => c.Value));
 
             content.SaveChanges();
-
-            if (!content.Request.Any())
-                content.Request.Add
-                    (
-                        new Request { Shop = Shops["КРС (Капитальный ремонт скважин)"], 
-                                      ResponsibleId = 3, 
-                                      begin = new DateTime(2020, 11, 2, 8, 0, 0), 
-                                      end = new DateTime(2020, 11, 5, 20, 0, 0), 
-                                      description = "Очистка забоя и ствола скважины от металлических предметов", 
-                                      comment = "Более подробная информация о проводимых работах находится в прикреплённом файле",
-                                      Place = Places["ЗАЯЛУ КП-19 Скв-117"]}
-                    );
-
-            content.SaveChanges();
-
-            if (!content.Technic.Any())
-            {
-                content.Technic.Add
-                   (
-                       new Technic
-                       {
-                           TypeTechnic = TypesTechnic["Самосвал Камаз"],
-                           quantity = 5,
-                           delay = 36,
-                           duration = 12,
-                           path = "Скв316_от_02_10.pdf",
-                           ExecutorId = 6,
-                           RequestId = 1
-                       }
-                    );
-
-                content.Technic.Add
-                    (
-                        new Technic
-                        {
-                            TypeTechnic = TypesTechnic["Автокран"],
-                            quantity = 2,
-                            delay = 0,
-                            duration = 36,
-                            path = "Скв316_от_02_10.pdf",
-                            ExecutorId = 1,
-                            RequestId = 1
-                        }
-                        );
-            }
-           
-            content.SaveChanges();
         }
 
         private static Dictionary<string, User> user;

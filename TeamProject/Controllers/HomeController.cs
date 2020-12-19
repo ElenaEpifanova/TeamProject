@@ -17,21 +17,26 @@ namespace TeamProject.Controllers
     public class HomeController : Controller
     {
         private readonly IRequest _allRequests;
-        private readonly RequestRepository _addRequest;
-        private readonly TechnicRepository _addTechnic;
+        private readonly RequestRepository _Request;
+        private readonly TechnicRepository _Technic;
 
-        public HomeController(IRequest iAllRequests, RequestRepository addRequest, TechnicRepository addTechnic)
+        public HomeController(IRequest iAllRequests, RequestRepository Request, TechnicRepository Technic)
         {
             _allRequests = iAllRequests;
-            _addRequest = addRequest;
-            _addTechnic = addTechnic;
+            _Request = Request;
+            _Technic = Technic;
         }
 
         public ViewResult Index()
         {
             HomeViewModel obj = new HomeViewModel();
-            obj.AllRequests = _allRequests.AllRequests;
+            obj.AllRequests = _allRequests.AllRequests.OrderBy(i => i.begin);
             return View(obj);
+        }
+
+        public ViewResult Reference()
+        {
+            return View("Reference");
         }
 
         public ViewResult Supply()
@@ -65,6 +70,26 @@ namespace TeamProject.Controllers
             Graphic(str);
             return View("ViewRequest", obj);
         }
+
+        [HttpGet]
+        public IActionResult Sort(int id)
+        {
+            HomeViewModel obj = new HomeViewModel();
+            switch(id)
+            {
+                case 0:
+                    obj.AllRequests = _allRequests.AllRequests.OrderBy(i => i.begin);
+                    break;
+                case 1:
+                    obj.AllRequests = _allRequests.AllRequests.OrderBy(i => i.Shop.name);
+                    break;
+                case 2:
+                    obj.AllRequests = _allRequests.AllRequests.OrderBy(i => i.Responsible.User.name);
+                    break;
+
+            }
+            return View("Index", obj);
+        }
         [HttpPost]
         public IActionResult Supply(HomeViewModel obj, int id)
         {
@@ -93,16 +118,42 @@ namespace TeamProject.Controllers
             }
             else
             {
-                _addRequest.Add_Request(obj.request.ShopId, obj.request.ResponsibleId, obj.request.begin, obj.request.end, obj.request.description, obj.request.comment, obj.request.PlaceId);
-                obj.AllRequests = _allRequests.AllRequests;
-
-                int requestID = obj.AllRequests.Last().Id;
-
-                for (int i = 0; i < obj.request.technic.Count; i++)
+                if (_allRequests.AllRequests.Any(i => i.ShopId == obj.request.ShopId &&
+                                                  i.ResponsibleId == obj.request.ResponsibleId &&
+                                                  i.begin == obj.request.begin &&
+                                                  i.end == obj.request.end &&
+                                                  i.PlaceId == obj.request.PlaceId))
                 {
-                    Technic temp = obj.request.technic[i];
-                    _addTechnic.Add_Technic(temp.TypeTechnicId, temp.quantity, temp.delay, temp.duration, temp.path, temp.ExecutorId, requestID);
+                    Request req = _allRequests.AllRequests.FirstOrDefault(i => i.ShopId == obj.request.ShopId &&
+                                                                        i.ResponsibleId == obj.request.ResponsibleId &&
+                                                                        i.begin == obj.request.begin &&
+                                                                        i.end == obj.request.end &&
+                                                                        i.PlaceId == obj.request.PlaceId);
+                    req.description = obj.request.description;
+                    req.comment = obj.request.comment;
+                    _Request.Up_Request(req);
+                    for (int i = 0; i < req.technic.Count; i++)
+                        _Technic.Rem_Technic(req.technic[i]);
+                    for (int i = 0; i < obj.request.technic.Count; i++)
+                    {
+                        Technic temp = obj.request.technic[i];
+                        _Technic.Add_Technic(temp.TypeTechnicId, temp.quantity, temp.delay, temp.duration, temp.path, temp.ExecutorId, req.Id);
+                    }
                 }
+                else
+                {
+                    _Request.Add_Request(obj.request.ShopId, obj.request.ResponsibleId, obj.request.begin, obj.request.end, obj.request.description, obj.request.comment, obj.request.PlaceId);
+                    obj.AllRequests = _allRequests.AllRequests;
+
+                    int requestID = obj.AllRequests.Last().Id;
+
+                    for (int i = 0; i < obj.request.technic.Count; i++)
+                    {
+                        Technic temp = obj.request.technic[i];
+                        _Technic.Add_Technic(temp.TypeTechnicId, temp.quantity, temp.delay, temp.duration, temp.path, temp.ExecutorId, requestID);
+                    }
+                }
+            
 
                 return RedirectToAction("Index", "Home");
             }           

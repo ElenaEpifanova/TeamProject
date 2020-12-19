@@ -14,12 +14,12 @@
         <header id="header">
             <h1><a href="/Home/">Журнал заявок</a></h1>
             <h1><a href="/Section1/">Составление заявки</a></h1>
+            <h1><a href="/Home/Reference" target="_blank">Справка</a></h1>
         </header>
 
         <!-- Main -->
         <div id="main">
 
-            <form asp-action="Index" method="post">
                 <!-- Post -->
                 <article class="post">
                     <header>
@@ -29,14 +29,13 @@
                     </header>
 
                     <table>
-                        <tr><th>№ заявки</th><th>Дата</th><th>ФИО ответственного</th><th>Цех</th><th>Описание работ</th></tr>
+                        <tr><th>№ заявки</th><th><a asp-action="Sort" asp-route-id="0">Дата</a></th><th><a asp-action="Sort" asp-route-id="2">ФИО ответственного</a></th><th><a asp-action="Sort" asp-route-id="1">Цех</a></th><th>Описание работ</th></tr>
                         @RenderBody()
                     </table>
                     <ul class="actions">
                         <li><a href="/Section1/" class="button">Добавить заявку</a></li>
                     </ul>
                 </article>
-            </form>
         </div>
 
         <!-- Footer -->
