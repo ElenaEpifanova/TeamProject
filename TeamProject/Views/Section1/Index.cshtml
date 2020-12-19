@@ -124,7 +124,7 @@
 
     </ul>
     <ul class="select">
-        <select id="time_e" asp-for="time_end" class="form-control" style="width: 265px;">
+        <select id="time_e" asp-for="time_end" class="form-control" style="width: 265px;" onchange="func3();">
             @{
                 int j = 1;
                 int ind2 = (Model.request.end.Hour - 8) * 2 + 1;
@@ -183,13 +183,13 @@
     if (Model.editing == "home")
     {
         <ul class="actions">
-            <li><input class="button  large" type="submit" value="Подать заявку"></li>
+            <li><input id="butt" class="button  large"  type="submit" value="Подать заявку"></li>
         </ul>
     }
     else
     {
         <ul class="actions">
-            <li><input class="button  large" type="submit" value="К разделу 2"></li>
+            <li><input id="butt" class="button  large"  type="submit" value="К разделу 2"></li>
         </ul>
     }
 }
@@ -200,7 +200,7 @@
         var x = document.getElementById(idDate).value;
         var input = document.getElementById("localdate2");
         input.setAttribute("min", x);
-        var op = document.getElementById("time_e").getElementsByTagName("option");
+        func3();
     }
 
 </script>
@@ -222,15 +222,14 @@
                     break;
             }
         }
+        func3();
     }
 </script>
 
+
 <script>
-    function func3(idDate) {
-        var x = document.getElementById(idDate).value;
-        var input = document.getElementById("localdate2");
-        input.setAttribute("min", x);
-        var op = document.getElementById("time_e").getElementsByTagName("option");
+    function func3() {
+        document.querySelector("#butt").value = "К разделу 2";
     }
 
 </script>

@@ -59,7 +59,7 @@ namespace TeamProject.Controllers
             model.request.Responsible = _allResponsibles.AllResponsibles.First(s => s.Id == model.request.ResponsibleId);
             model.request.begin = date_b;
             model.request.end = date_e;
-
+            model.editing = Convert.ToString(TempData["editing"]);
             //--get technics--
             object request;
             TempData.TryGetValue("request", out request);
@@ -70,8 +70,10 @@ namespace TeamProject.Controllers
                 model.request.technic = tmp.technic;
                 model.request.PlaceId = tmp.PlaceId;
                 model.request.Place = tmp.Place;
+                if (tmp.begin != model.request.begin || tmp.end != model.request.end)
+                    model.editing = "";
             }
-            model.editing = Convert.ToString(TempData["editing"]);
+            
             //--post--
             TempData["request"] = JsonConvert.SerializeObject(model.request, Formatting.None,
                         new JsonSerializerSettings()
