@@ -8256,19 +8256,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mlaym\\.nuget\\packages\\": {}
+    "C:\\Users\\ainur\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
+      "projectUniqueName": "D:\\Documents\\Mus5\\TeamProject\\TeamProject\\TeamProject.csproj",
       "projectName": "TeamProject",
-      "projectPath": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\TeamProject.csproj",
-      "packagesPath": "C:\\Users\\mlaym\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mlaym\\OneDrive\\Документы\\GitHub\\TeamProject\\TeamProject\\obj\\",
+      "projectPath": "D:\\Documents\\Mus5\\TeamProject\\TeamProject\\TeamProject.csproj",
+      "packagesPath": "C:\\Users\\ainur\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\Mus5\\TeamProject\\TeamProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mlaym\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ainur\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

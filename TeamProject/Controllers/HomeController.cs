@@ -100,11 +100,12 @@ namespace TeamProject.Controllers
             TempData.Remove("request");
             if (id == 1)
             {
-                /*TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
-                     new JsonSerializerSettings()
-                     {
-                         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                     });*/
+                TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                      new JsonSerializerSettings()
+                      {
+                          ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                      });
+                TempData["editing"] = "home";
                 return RedirectToAction("Index", "Section1"); // отсылочка к редактуре 1
             }
             if (id == 2)
@@ -145,7 +146,7 @@ namespace TeamProject.Controllers
                     _Request.Add_Request(obj.request.ShopId, obj.request.ResponsibleId, obj.request.begin, obj.request.end, obj.request.description, obj.request.comment, obj.request.PlaceId);
                     obj.AllRequests = _allRequests.AllRequests;
 
-                    int requestID = obj.AllRequests.Last().Id;
+                    int requestID = obj.AllRequests.OrderBy(r => r.Id).Last().Id;
 
                     for (int i = 0; i < obj.request.technic.Count; i++)
                     {

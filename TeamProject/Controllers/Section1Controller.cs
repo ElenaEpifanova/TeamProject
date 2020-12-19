@@ -26,7 +26,20 @@ namespace TeamProject.Controllers
             Section1ViewModel obj = new Section1ViewModel();
             obj.AllShops = _allShops.AllShops;
             obj.AllResponsibles = _allResponsibles.AllResponsibles;
-
+            object request;
+            TempData.TryGetValue("request", out request);
+            if (request != null)
+            {
+                request = JsonConvert.DeserializeObject<Request>((string)request);
+                obj.request = request as Request;
+                TempData["request"] = JsonConvert.SerializeObject(obj.request, Formatting.None,
+                new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                obj.editing = Convert.ToString(TempData["editing"]);
+                TempData["editing"] = obj.editing;
+            }
             return View(obj);
         }
 
@@ -36,33 +49,41 @@ namespace TeamProject.Controllers
             model.AllShops = _allShops.AllShops;
             model.AllResponsibles = _allResponsibles.AllResponsibles;
             //--Data from model--
-            int shopId = _allShops.AllShops.First(c => c.name == model.shop).Id;
-            int responsibleId = _allResponsibles.FindObjectResponsible(model.responsible).Id;
-
-            DateTime date_b = model.date_begin.AddMinutes(Convert.ToInt32(model.time_begin.Substring(0, model.time_begin.IndexOf(':'))) * 60
+            DateTime date_b = model.request.begin.AddMinutes(Convert.ToInt32(model.time_begin.Substring(0, model.time_begin.IndexOf(':'))) * 60
                                                     + Convert.ToInt32(model.time_begin.Substring(model.time_begin.IndexOf(':') + 1, 2)));
 
-            DateTime date_e = model.date_end.AddMinutes(Convert.ToInt32(model.time_end.Substring(0, model.time_end.IndexOf(':'))) * 60
+            DateTime date_e = model.request.end.AddMinutes(Convert.ToInt32(model.time_end.Substring(0, model.time_end.IndexOf(':'))) * 60
                                                    + Convert.ToInt32(model.time_end.Substring(model.time_end.IndexOf(':') + 1, 2)));
+            //--update request--
+            model.request.Shop = _allShops.AllShops.First(s => s.Id == model.request.ShopId);
+            model.request.Responsible = _allResponsibles.AllResponsibles.First(s => s.Id == model.request.ResponsibleId);
+            model.request.begin = date_b;
+            model.request.end = date_e;
 
-            //--New Request--
-            Request request = new Request
+            //--get technics--
+            object request;
+            TempData.TryGetValue("request", out request);
+            if (request != null)
             {
-                ShopId = shopId,
-                Shop = _allShops.AllShops.First(s => s.Id == shopId),
-                ResponsibleId = responsibleId,
-                Responsible = _allResponsibles.AllResponsibles.First(r => r.Id == responsibleId),
-                begin = date_b,
-                end = date_e,
-                description = model.description,
-                comment = model.comment
-            };
-            TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                request = JsonConvert.DeserializeObject<Request>((string)request);
+                Request tmp = request as Request;
+                model.request.technic = tmp.technic;
+                model.request.PlaceId = tmp.PlaceId;
+                model.request.Place = tmp.Place;
+            }
+            model.editing = Convert.ToString(TempData["editing"]);
+            //--post--
+            TempData["request"] = JsonConvert.SerializeObject(model.request, Formatting.None,
                         new JsonSerializerSettings()
                         {
                             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                         });
-            return RedirectToAction("Index", "Section2");
+
+
+            if (model.editing == "home")
+                return RedirectToAction("Supply", "Home");
+            else
+                return RedirectToAction("Index", "Section2");
         }
     }
 }
