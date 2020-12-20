@@ -110,12 +110,12 @@ namespace TeamProject.Controllers
             }
             if (id == 2)
             {
-                /*TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
+                TempData["request"] = JsonConvert.SerializeObject(request, Formatting.None,
                      new JsonSerializerSettings()
                      {
                          ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                     });*/
-                return RedirectToAction("Index", "Section2"); // отсылочка к редактуре 2
+                     });
+                return RedirectToAction("Index", "Section2", new { supply=true }); // отсылочка к редактуре 2
             }
             else
             {

@@ -21,5 +21,7 @@ namespace TeamProject.ViewModels
         public string time_end { get; set; }
         public string editing { get; set; }
 
+        public bool supply { get; set; }
+
     }
 }

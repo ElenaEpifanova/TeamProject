@@ -21,9 +21,10 @@ namespace TeamProject.Controllers
             _allResponsibles = iAllResponsibles;
         }
 
-        public ViewResult Index()
+        public ViewResult Index(bool supply=false)
         {
             Section1ViewModel obj = new Section1ViewModel();
+            obj.supply = supply;
             obj.AllShops = _allShops.AllShops;
             obj.AllResponsibles = _allResponsibles.AllResponsibles;
             object request;
@@ -44,7 +45,7 @@ namespace TeamProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Section1ViewModel model)
+        public IActionResult Index(Section1ViewModel model, bool supply=false)
         {
             model.AllShops = _allShops.AllShops;
             model.AllResponsibles = _allResponsibles.AllResponsibles;
@@ -85,7 +86,7 @@ namespace TeamProject.Controllers
             if (model.editing == "home")
                 return RedirectToAction("Supply", "Home");
             else
-                return RedirectToAction("Index", "Section2");
+                return RedirectToAction("Index", "Section2", new { supply=supply });
         }
     }
 }

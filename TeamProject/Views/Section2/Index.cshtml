@@ -57,8 +57,8 @@
 @{
 
     @*Пост в foreach цикле (от кол-ва техник)*@
-    for (int i = 0; i < Model.quantity; i++)
-    {
+for (int i = 0; i < Model.quantity; i++)
+{
 
 
         <article class="post">
@@ -113,11 +113,11 @@
                             {
                                 if (j + 1 == Model.technics[i].quantity)
                                 {
-                                    <option value="@(j+1)" selected="selected">@(j + 1)</option>
+                                    <option value="@(j + 1)" selected="selected">@(j + 1)</option>
                                 }
                                 else
                                 {
-                                    <option value="@(j+1)">@(j + 1)</option>
+                                    <option value="@(j + 1)">@(j + 1)</option>
                                 }
 
 
@@ -133,63 +133,72 @@
                 <ul class="select">
                     <select asp-for="technics[i].delay" onchange="func3(@i)" id="delay+@i" style="width: 595px;">
                         @{
-                            for (int j = 0; j < Model.timeq - 1; j++)
+                            if (Model.quantity > 1)
                             {
-
-                                if (j % 2 == 0)
+                                for (int j = 0; j <= Model.timeq - 1; j++)
                                 {
-                                    if (j == Model.technics[i].delay)
+
+                                    if (j % 2 == 0)
                                     {
-                                        if (j < 20)
+                                        if (j == Model.technics[i].delay)
                                         {
-                                            <option selected="selected" value="@j">0@(j / 2):00</option>
-}
+                                            if (j < 20)
+                                            {
+                                                <option selected="selected" value="@j">0@(j / 2):00</option>
+                                            }
+                                            else
+                                            {
+                                                <option selected="selected" value="@j">@(j / 2):00</option>
+                                            }
+                                        }
                                         else
                                         {
-                                            <option selected="selected" value="@j">@(j / 2):00</option>
-}
+                                            if (j < 20)
+                                            {
+                                                <option value="@j">0@(j / 2):00</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@j">@(j / 2):00</option>
+                                            }
+                                        }
+
                                     }
                                     else
                                     {
-                                        if (j < 20)
+                                        if (j == Model.technics[i].delay)
                                         {
-                                            <option value="@j">0@(j / 2):00</option>
-}
+                                            if (j < 20)
+                                            {
+                                                <option selected="selected" value="@j">0@(j / 2):30</option>
+                                            }
+                                            else
+                                            {
+                                                <option selected="selected" value="@j">@(j / 2):30</option>
+                                            }
+                                        }
                                         else
                                         {
-                                            <option value="@j">@(j / 2):00</option>
-}
-                                    }
+                                            if (j < 20)
+                                            {
+                                                <option value="@j">0@(j / 2):30</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@j">@(j / 2):30</option>
+                                            }
+                                        }
 
-                                }
-                                else
-                                {
-                                    if (j == Model.technics[i].delay)
-                                    {
-                                        if (j < 20)
-                                        {
-                                            <option selected="selected" value="@j">0@(j / 2):30</option>
-}
-                                        else
-                                        {
-                                            <option selected="selected" value="@j">@(j / 2):30</option>
-}
                                     }
-                                    else
-                                    {
-                                        if (j < 20)
-                                        {
-                                            <option value="@j">0@(j / 2):30</option>
-}
-                                        else
-                                        {
-                                            <option value="@j">@(j / 2):30</option>
-}
-                                    }
-
                                 }
                             }
-                        }
+                            else
+                            {
+                                <option selected="selected" value="0">00:00</option>
+                            }
+
+                            }
+
 
                     </select>
                 </ul>
@@ -200,58 +209,91 @@
                 <ul class="select">
                     <select asp-for="technics[i].duration" id="duration+@i" style="width: 595px;">
                         @{
-                            for (int j = 1; j < Model.timeq; j++)
+                            if (Model.quantity > 1)
                             {
-                                if (j % 2 == 0)
+                                for (int j = 1; j <= Model.timeq; j++)
                                 {
-                                    if (j == Model.technics[i].duration)
+                                    if (j % 2 == 0)
                                     {
-                                        if (j < 20)
+                                        if (j == Model.technics[i].duration)
                                         {
-                                            <option selected="selected" value="@j">0@(j / 2):00</option>
-}
+                                            if (j < 20)
+                                            {
+                                                <option selected="selected" value="@j">0@(j / 2):00</option>
+                                            }
+                                            else
+                                            {
+                                                <option selected="selected" value="@j">@(j / 2):00</option>
+                                            }
+                                        }
                                         else
                                         {
-                                            <option selected="selected" value="@j">@(j / 2):00</option>
-}
+                                            if (j < 20)
+                                            {
+                                                <option value="@j">0@(j / 2):00</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@j">@(j / 2):00</option>
+                                            }
+                                        }
+
                                     }
                                     else
                                     {
-                                        if (j < 20)
+                                        if (j == Model.technics[i].duration)
                                         {
-                                            <option value="@j">0@(j / 2):00</option>
-}
+                                            if (j < 20)
+                                            {
+                                                <option selected="selected" value="@j">0@(j / 2):30</option>
+                                            }
+                                            else
+                                            {
+                                                <option selected="selected" value="@j">@(j / 2):30</option>
+                                            }
+                                        }
                                         else
                                         {
-                                            <option value="@j">@(j / 2):00</option>
-}
-                                    }
+                                            if (j < 20)
+                                            {
+                                                <option value="@j">0@(j / 2):30</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@j">@(j / 2):30</option>
+                                            }
+                                        }
 
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (Model.timeq % 2 == 0)
+                                {
+                                   
+                                        if (Model.timeq < 20)
+                                        {
+                                            <option selected="selected" value="@Model.timeq">0@(Model.timeq / 2):00</option>
+                                        }
+                                        else
+                                        {
+                                            <option selected="selected" value="@Model.timeq">@(Model.timeq / 2):00</option>
+                                        }
                                 }
                                 else
                                 {
-                                    if (j == Model.technics[i].duration)
-                                    {
-                                        if (j < 20)
+                                   
+                                        if (Model.timeq < 20)
                                         {
-                                            <option selected="selected" value="@j">0@(j / 2):30</option>
-}
+                                            <option selected="selected" value="@Model.timeq">0@(Model.timeq / 2):30</option>
+                                        }
                                         else
                                         {
-                                            <option selected="selected" value="@j">@(j / 2):30</option>
-}
-                                    }
-                                    else
-                                    {
-                                        if (j < 20)
-                                        {
-                                            <option value="@j">0@(j / 2):30</option>
-}
-                                        else
-                                        {
-                                            <option value="@j">@(j / 2):30</option>
-}
-                                    }
+                                            <option selected="selected" value="@Model.timeq">@(Model.timeq / 2):30</option>
+                                        }
+                                  
+                                    
 
                                 }
                             }
@@ -295,9 +337,9 @@
 </article>
 
 <ul class="actions pagination">
-<li><input asp-route-res="@true" class="button  large" type="submit" value="Подать заявку"></li>
-<li><a href="/Section1/" class="button large">К разделу 1</a></li>
-                </ul>
+    <li><input asp-route-supply="@true" class="button  large" type="submit" value="Подать заявку"></li>
+    <li><input asp-route-section1="@true" class="button  large" type="submit" value="К разделу 1"></li>
+</ul>
 
 <script>
        function func1(i) {

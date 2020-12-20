@@ -882,3 +882,5 @@ D:\Documents\Mus5\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.cs
 D:\Documents\Mus5\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.dll
 D:\Documents\Mus5\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.pdb
 D:\Documents\Mus5\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\TeamProject.genruntimeconfig.cache
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Reference.cshtml.g.cs
+D:\data\5 term\командный проект\TeamProject\TeamProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Reference.cshtml.g.cs
